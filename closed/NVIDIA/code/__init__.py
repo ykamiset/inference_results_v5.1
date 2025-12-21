@@ -72,4 +72,5 @@ G_BENCHMARK_MODULES: Dict[Benchmark, ModuleLocation] = {
     Benchmark.SDXL: ModuleLocation("code.stable-diffusion-xl.tensorrt"),
     Benchmark.RGAT: ModuleLocation("code.rgat.pytorch"),
     Benchmark.WHISPER: ModuleLocation("code.whisper.tensorrt"),
+    Benchmark.GPTOSS_120B: ModuleLocation("code.gpt0ss-120b.tensorrt"),
 }

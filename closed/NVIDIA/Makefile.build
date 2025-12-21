@@ -30,11 +30,11 @@ endif
 
 # Set the include directory for Loadgen header files
 INFERENCE_DIR = $(BUILD_DIR)/inference
-INFERENCE_URL = https://github.com/mlcommons/inference.git
+INFERENCE_URL = https://github.com/v-shobhit/inference.git
 LOADGEN_INCLUDE_DIR ?= $(INFERENCE_DIR)/loadgen
 LOADGEN_LIB_DIR ?= $(LOADGEN_INCLUDE_DIR)/build
 # Loadgen hash: 7/31/2025 (Only check for token latency requirements for server scenario)
-INFERENCE_HASH = 47b91b979caeea4fbd7e91a4d919a6367fd45eed
+INFERENCE_HASH = b286618f319a50a88ef89c00bc5093ebfe337236
 
 # Set Environment variables to extracted contents
 export LD_LIBRARY_PATH := $(LD_LIBRARY_PATH):/usr/local/cuda/lib64:/usr/lib/$(ARCH)-linux-gnu:$(LOADGEN_LIB_DIR)

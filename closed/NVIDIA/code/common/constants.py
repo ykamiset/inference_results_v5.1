@@ -178,6 +178,7 @@ class Benchmark(AliasedNameEnum):
     LLAMA3_1_405B: AliasedName = AliasedName("llama3_1-405b", ("llama3.1-405b", "llama-v3.1-405b", "llama3.1-405b-99", "llama3.1-405b-99.9"))
     Mixtral8x7B: AliasedName = AliasedName("mixtral-8x7b", ("mixtral", "mixtral8x7b", "moe", "mixtral-8x7b-99", "mixtral-8x7b-99.9"))
     DeepSeek_R1: AliasedName = AliasedName("deepseek-r1", ("deepseek_r1", "deeseek-r1-99", "deepseek_r1-99"))
+    GPTOSS_120B: AliasedName = AliasedName("gptoss-120b", ("gptoss-120b", "gptoss120b", "gptoss_120b", "gpt-oss-120b", "gptoss-120b-99", "gptoss-120b-99.9"))
     ResNet50: AliasedName = AliasedName("resnet50", ("resnet",))
     Retinanet: AliasedName = AliasedName("retinanet", ("ssd-retinanet", "resnext", "ssd-resnext"))
     SDXL: AliasedName = AliasedName("stable-diffusion-xl", ("sdxl-base", "diffusion", "stable-diffusion", "sdxl"))
@@ -199,6 +200,7 @@ class Benchmark(AliasedNameEnum):
                         Benchmark.LLAMA3_1_405B,
                         Benchmark.Mixtral8x7B,
                         Benchmark.DeepSeek_R1,
+                        Benchmark.GPTOSS_120B,
                         Benchmark.DLRMv2,
                         Benchmark.ResNet50,
                         Benchmark.Retinanet,
@@ -231,6 +233,7 @@ class Benchmark(AliasedNameEnum):
                         Benchmark.LLAMA3_1_405B,
                         Benchmark.Mixtral8x7B,
                         Benchmark.DeepSeek_R1,
+                        Benchmark.GPTOSS_120B,
                         Benchmark.WHISPER)
 
     @property
