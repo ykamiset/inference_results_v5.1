@@ -107,7 +107,7 @@ TRTLLM_DIR ?= $(BUILD_DIR)/TRTLLM
 TRTLLM_BUILD_DIR ?= $(BUILD_DIR)/TRTLLM/build
 TRTLLM_URL = https://github.com/NVIDIA/TensorRT-LLM.git
 # 7/24/25 1.0-mlpinf side branch (AG optimization)
-TRTLLM_HASH = 18c0333e96ea7a2c37caded8a310d05c5f095e88
+TRTLLM_HASH = 31116825b39f4e6a6a1e127001f5204b73d1dc32
 
 
 BUILD_TRITON ?= 0
@@ -242,18 +242,7 @@ clone_loadgen:
 
 .PHONY: clone_trt_llm
 clone_trt_llm:
-	@echo "Cloning TRT LLM in $(TRTLLM_DIR) from $(TRTLLM_URL)"
-	@if [ ! -d $(TRTLLM_DIR) ]; then \
-		echo "Cloning TRT-LLM" \
-			&& git clone $(TRTLLM_URL) $(TRTLLM_DIR); \
-	fi
-	@echo "Updating TRT-LLM to $(TRTLLM_HASH)" \
-		&& cd $(TRTLLM_DIR) \
-		&& git fetch \
-		&& git reset --hard HEAD \
-		&& git checkout $(TRTLLM_HASH) \
-		&& git submodule update --init --recursive \
-		&& grep -qxF "triton==3.3.1; platform_machine == \"x86_64\"" ./requirements.txt || echo "triton==3.3.1; platform_machine == \"x86_64\"" >> ./requirements.txt
+	@echo "skipping.. cloning TRT LLM in $(TRTLLM_DIR) from $(TRTLLM_URL)"
 
 
 # Build Triton.
@@ -281,10 +270,8 @@ build_trt_llm:
 			&& rm -rf .llm_$(ARCH); \
 	fi
 	python -m venv .llm_$(ARCH) --system-site-packages
-	@echo "Building TRT-LLM..."
-	cd $(TRTLLM_DIR) && CCACHE_NODISABLE=true /work/.llm_$(ARCH)/bin/python scripts/build_wheel.py --use_ccache --benchmarks -a="$(TRTLLM_BUILD_ARCH)" --no-venv --clean
-	/work/.llm_$(ARCH)/bin/pip install $(TRTLLM_BUILD_DIR)/tensorrt*.whl
-	/work/.llm_$(ARCH)/bin/pip install -r docker/common/requirements/requirements.llm.txt
+	@echo "Building TRT-LLM... skipped"
+
 
 
 # Build TensorRT plugins.
