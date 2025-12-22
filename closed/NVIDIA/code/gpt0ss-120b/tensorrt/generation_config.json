@@ -1,0 +1,19 @@
+{
+    "generation_config": {
+      "min_output_len": 1,
+      "max_output_len": 32768,
+      "runtime_beam_width": 1,
+      "temperature": 1.0,
+      "top_k": 1,
+      "top_p": 0.001,
+      "use_stop_tokens": false,
+      "streaming": true,
+      "eos_token_id": [
+        200002,
+        199999,
+        200012
+      ],
+      "bos_token_id": 199998,
+      "name": "gpt-oss-120b"
+    }
+}
