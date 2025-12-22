@@ -234,7 +234,7 @@ attach_docker:
 .PHONY: launch_docker
 launch_docker:
 	eval $$(ssh-agent -s) > /dev/null 2>&1 && \
-	$(DOCKER_RUN_CMD) --rm $(DOCKER_INTERACTIVE_FLAGS) -w /work \
+	$(DOCKER_RUN_CMD)  $(DOCKER_INTERACTIVE_FLAGS) -w /work \
 		-v $(realpath $(HOST_VOL)):$(CONTAINER_VOL) -v $(realpath ${HOME}):/mnt/${HOME} \
 		--cap-add SYS_ADMIN --cap-add SYS_TIME \
 		--shm-size=32gb \
@@ -249,6 +249,6 @@ launch_docker:
 		$(DOCKER_MOUNTS) $(DOCKER_ARGS) \
 		$(DOCKER_ENV_VAR) \
 		$(shell if [ -n "$$MIG_CONF" ] && [ "$$MIG_CONF" = "ALL" ]; then echo "--gpus all -e NVIDIA_MIG_CONFIG_DEVICES=all"; elif [ -n "$$MIG_CONF" ] && [ "$$MIG_CONF" != "OFF" ]; then echo "--gpus '\"device=`bash scripts/mig_get_uuid.sh`\"'"; fi) \
-		mlperf-inference:$(DOCKER_TAG)-$(ENV)-latest $(DOCKER_COMMAND)
+		nvcr.io/nvidia/tensorrt-llm/release:1.2.0rc2 $(DOCKER_COMMAND)
 
 endif # ifndef MAKEFILE_DOCKER_INCLUDED
