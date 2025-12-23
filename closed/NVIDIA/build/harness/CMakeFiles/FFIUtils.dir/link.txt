@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -Wno-deprecated-declarations -O3 -DNDEBUG -flto=auto -Wl,--dependency-file=CMakeFiles/FFIUtils.dir/link.d -shared  -o lib/FFIUtils.cpython-312-x86_64-linux-gnu.so CMakeFiles/FFIUtils.dir/ffi_utils/ffi_utils.cpp.o  /work/build/inference/loadgen/build/libmlperf_loadgen.a

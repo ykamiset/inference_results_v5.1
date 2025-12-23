@@ -245,7 +245,7 @@ launch_docker:
 		--security-opt apparmor=unconfined --security-opt seccomp=unconfined \
 		--name $(DOCKER_NAME) -h $(subst _,-,$(shell echo $(DOCKER_NAME) | cut -c -64)) --add-host $(subst _,-,$(DOCKER_NAME)):127.0.0.1 \
 		--cpuset-cpus $(shell taskset -c -p $$$$ | awk '{print $$NF}') \
-		--user $(UID) --net host --device /dev/fuse \
+		--user root --net host --device /dev/fuse \
 		$(DOCKER_MOUNTS) $(DOCKER_ARGS) \
 		$(DOCKER_ENV_VAR) \
 		$(shell if [ -n "$$MIG_CONF" ] && [ "$$MIG_CONF" = "ALL" ]; then echo "--gpus all -e NVIDIA_MIG_CONFIG_DEVICES=all"; elif [ -n "$$MIG_CONF" ] && [ "$$MIG_CONF" != "OFF" ]; then echo "--gpus '\"device=`bash scripts/mig_get_uuid.sh`\"'"; fi) \

@@ -42,11 +42,13 @@ lwis_module = Pybind11Extension(
         "/work/code/harness/common",
         "/usr/include",
         "/usr/local/cuda/include",
+        "/usr/local/tensorrt/include",
     ],
     library_dirs=[
         "/work/build/inference/loadgen/build",
         "/work/build/harness/lwis",
         "/usr/local/cuda/lib64",
+        "/usr/local/tensorrt/lib",
         "/usr/local/lib",
     ],
     libraries=[

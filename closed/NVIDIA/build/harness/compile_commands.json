@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/work/build/harness",
+  "command": "/usr/bin/c++ -DFFIUtils_EXPORTS -DLOADGEN_INCLUDE_DIR=/work/build/inference/loadgen -I/work/build/inference/loadgen -isystem /usr/include/python3.12  -Wno-deprecated-declarations -O3 -DNDEBUG -std=gnu++20 -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects -o CMakeFiles/FFIUtils.dir/ffi_utils/ffi_utils.cpp.o -c /work/code/harness/ffi_utils/ffi_utils.cpp",
+  "file": "/work/code/harness/ffi_utils/ffi_utils.cpp",
+  "output": "CMakeFiles/FFIUtils.dir/ffi_utils/ffi_utils.cpp.o"
+},
+{
+  "directory": "/work/build/harness",
+  "command": "/usr/bin/c++ -DLOADGEN_INCLUDE_DIR=/work/build/inference/loadgen -I/usr/local/cuda/include -I/work/build/inference/loadgen -I/work/code/harness/lwis/include -I/usr/local/tensorrt/include -I/work/code/harness/common -I/work/code/harness/lwis/../common  -Wno-deprecated-declarations -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/harness_default.dir/harness_default/main_default.cc.o -c /work/code/harness/harness_default/main_default.cc",
+  "file": "/work/code/harness/harness_default/main_default.cc",
+  "output": "CMakeFiles/harness_default.dir/harness_default/main_default.cc.o"
+},
+{
+  "directory": "/work/build/harness",
+  "command": "/usr/bin/c++ -DLOADGEN_INCLUDE_DIR=/work/build/inference/loadgen -I/usr/local/cuda/include -I/work/build/inference/loadgen -I/work/code/harness/lwis/include -I/usr/local/tensorrt/include -I/work/code/harness/common -I/work/code/harness/lwis/../common  -Wno-deprecated-declarations -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/harness_default.dir/common/logger.cpp.o -c /work/code/harness/common/logger.cpp",
+  "file": "/work/code/harness/common/logger.cpp",
+  "output": "CMakeFiles/harness_default.dir/common/logger.cpp.o"
+},
+{
+  "directory": "/work/build/harness",
+  "command": "/usr/bin/c++ -DLOADGEN_INCLUDE_DIR=/work/build/inference/loadgen -I/usr/local/cuda/include -I/work/build/inference/loadgen -I/work/code/harness/lwis/include -I/usr/local/tensorrt/include -I/work/code/harness/common -I/work/code/harness/harness_dlrm_v2  -Wno-deprecated-declarations -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/harness_dlrm_v2.dir/harness_dlrm_v2/main_dlrm_v2.cpp.o -c /work/code/harness/harness_dlrm_v2/main_dlrm_v2.cpp",
+  "file": "/work/code/harness/harness_dlrm_v2/main_dlrm_v2.cpp",
+  "output": "CMakeFiles/harness_dlrm_v2.dir/harness_dlrm_v2/main_dlrm_v2.cpp.o"
+},
+{
+  "directory": "/work/build/harness",
+  "command": "/usr/bin/c++ -DLOADGEN_INCLUDE_DIR=/work/build/inference/loadgen -I/usr/local/cuda/include -I/work/build/inference/loadgen -I/work/code/harness/lwis/include -I/usr/local/tensorrt/include -I/work/code/harness/common -I/work/code/harness/harness_dlrm_v2  -Wno-deprecated-declarations -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/harness_dlrm_v2.dir/harness_dlrm_v2/dlrm_v2_server.cpp.o -c /work/code/harness/harness_dlrm_v2/dlrm_v2_server.cpp",
+  "file": "/work/code/harness/harness_dlrm_v2/dlrm_v2_server.cpp",
+  "output": "CMakeFiles/harness_dlrm_v2.dir/harness_dlrm_v2/dlrm_v2_server.cpp.o"
+},
+{
+  "directory": "/work/build/harness",
+  "command": "/usr/bin/c++ -DLOADGEN_INCLUDE_DIR=/work/build/inference/loadgen -I/usr/local/cuda/include -I/work/build/inference/loadgen -I/work/code/harness/lwis/include -I/usr/local/tensorrt/include -I/work/code/harness/common -I/work/code/harness/harness_dlrm_v2  -Wno-deprecated-declarations -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/harness_dlrm_v2.dir/harness_dlrm_v2/batch_maker.cpp.o -c /work/code/harness/harness_dlrm_v2/batch_maker.cpp",
+  "file": "/work/code/harness/harness_dlrm_v2/batch_maker.cpp",
+  "output": "CMakeFiles/harness_dlrm_v2.dir/harness_dlrm_v2/batch_maker.cpp.o"
+},
+{
+  "directory": "/work/build/harness",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DLOADGEN_INCLUDE_DIR=/work/build/inference/loadgen --options-file CMakeFiles/harness_dlrm_v2.dir/includes_CUDA.rsp  -gencode arch=compute_80,code=sm_80 -gencode arch=compute_86,code=sm_86 -gencode arch=compute_87,code=sm_87 -gencode arch=compute_90,code=sm_90 -O3 -DNDEBUG -std=c++20 -x cu -c /work/code/harness/harness_dlrm_v2/dlrm_v2_kernels.cu -o CMakeFiles/harness_dlrm_v2.dir/harness_dlrm_v2/dlrm_v2_kernels.cu.o",
+  "file": "/work/code/harness/harness_dlrm_v2/dlrm_v2_kernels.cu",
+  "output": "CMakeFiles/harness_dlrm_v2.dir/harness_dlrm_v2/dlrm_v2_kernels.cu.o"
+},
+{
+  "directory": "/work/build/harness",
+  "command": "/usr/bin/c++ -DLOADGEN_INCLUDE_DIR=/work/build/inference/loadgen -I/usr/local/cuda/include -I/work/build/inference/loadgen -I/work/code/harness/lwis/include -I/usr/local/tensorrt/include -I/work/code/harness/common -I/work/code/harness/harness_dlrm_v2  -Wno-deprecated-declarations -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/harness_dlrm_v2.dir/common/logger.cpp.o -c /work/code/harness/common/logger.cpp",
+  "file": "/work/code/harness/common/logger.cpp",
+  "output": "CMakeFiles/harness_dlrm_v2.dir/common/logger.cpp.o"
+},
+{
+  "directory": "/work/build/harness/lwis",
+  "command": "/usr/bin/c++ -DLOADGEN_INCLUDE_DIR=/work/build/inference/loadgen -I/usr/local/cuda/include -I/work/build/inference/loadgen -I/usr/local/tensorrt/include -I/work/code/harness/lwis/include -I/work/code/harness/lwis/../common  -Wno-deprecated-declarations -O3 -DNDEBUG -std=gnu++20 -fPIC -o CMakeFiles/lwis.dir/src/lwis.cpp.o -c /work/code/harness/lwis/src/lwis.cpp",
+  "file": "/work/code/harness/lwis/src/lwis.cpp",
+  "output": "lwis/CMakeFiles/lwis.dir/src/lwis.cpp.o"
+}
+]

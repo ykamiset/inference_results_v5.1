@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/work/build/harness/cmake_install.cmake",
+		"/work/build/harness/lwis/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

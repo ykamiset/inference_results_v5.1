@@ -1,0 +1,3 @@
+/work/build/plugins/NMSOptPlugin/CMakeFiles/nmsoptplugin.dir
+/work/build/plugins/NMSOptPlugin/CMakeFiles/edit_cache.dir
+/work/build/plugins/NMSOptPlugin/CMakeFiles/rebuild_cache.dir

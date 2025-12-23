@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblwis.a CMakeFiles/lwis.dir/src/lwis.cpp.o
+/usr/bin/ranlib liblwis.a

@@ -122,7 +122,7 @@ __launch_bounds__(nthds_per_cta)
             isValid = 0;
         }
 
-        aggregate += BlockReduce(temp_storage).Reduce(isValid, cub::Sum());
+        aggregate += BlockReduce(temp_storage).Sum(isValid);
     }
     if (threadIdx.x == 0)
     {

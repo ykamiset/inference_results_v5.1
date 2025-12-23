@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/work/build/plugins/retinanetConcatPlugin/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

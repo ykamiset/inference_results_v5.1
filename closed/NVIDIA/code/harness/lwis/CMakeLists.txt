@@ -18,6 +18,11 @@ add_library(lwis
 
 set_target_properties(lwis PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
+target_link_directories(lwis
+    PUBLIC
+        /usr/local/tensorrt/lib
+)
+
 target_link_libraries(lwis
     glog
     nvinfer
@@ -28,7 +33,9 @@ target_link_libraries(lwis
 
 target_include_directories(lwis
     PUBLIC
+        ${CUDA_INCLUDE_DIRS}
         ${LOADGEN_INCLUDE_DIR}
+        /usr/local/tensorrt/include
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../common>
 )

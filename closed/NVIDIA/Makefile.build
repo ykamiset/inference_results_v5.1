@@ -45,7 +45,9 @@ export CPATH := /usr/local/cuda/include:/usr/include/$(ARCH)-linux-gnu:/usr/incl
 export CUDA_PATH := /usr/local/cuda
 export CCACHE_DISABLE=1
 export NUMBA_CACHE_DIR=$(BUILD_DIR)/cache
-
+export TRT_LIB_DIR=/usr/local/tensorrt/lib/
+export TENSORRT_INCLUDE_DIR=/usr/local/tensorrt/include
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TRT_LIB_DIR
 # Set CUDA_DEVICE_MAX_CONNECTIONS to increase multi-stream performance.
 export CUDA_DEVICE_MAX_CONNECTIONS := 32
 
@@ -80,7 +82,8 @@ TRITON_THIRDPARTY_HASH = $(TRITON_HASH)
 TRITON_TENSORRT_HASH = $(TRITON_HASH)
 TRITON_PYTHON_BE_HASH = $(TRITON_HASH)
 
-TRT_INCLUDE_DIR = /usr/include/$(ARCH)-linux-gnu/
+TRT_INCLUDE_DIR = /usr/local/tensorrt/include
+TRT_LIB_DIR = /usr/local/tensorrt/lib
 
 # Set this to 0 once repo is frozen
 CHECK_TRITON_VERSION=0
@@ -149,7 +152,7 @@ else
     TRITON_BUILD_FLAGS += --build-type=$(BUILD_TYPE)
 endif
 
-PLUGINS := NMSOptPlugin retinanetConcatPlugin DLRMv2EmbeddingLookupPlugin
+PLUGINS := NMSOptPlugin
 PLUGIN_TARGETS := $(addprefix plugin., $(PLUGINS))
 
 # Add symbolic links to scratch path if it exists.
@@ -283,8 +286,8 @@ build_plugins: $(PLUGIN_TARGETS)
 $(PLUGIN_TARGETS): plugin.%: code/plugin/%
 	mkdir -p build/plugins/$(<F)
 	cd build/plugins/$(<F)\
-		&& cmake -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) $(PROJECT_ROOT)/code/plugin/$(<F) \
-		&& make -j
+		&& TRT_INCLUDE_DIR=$(TRT_INCLUDE_DIR) TRT_LIB_DIR=$(TRT_LIB_DIR) cmake -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) $(PROJECT_ROOT)/code/plugin/$(<F) \
+		&& make -j VERBOSE=1
 
 
 # Build LoadGen.

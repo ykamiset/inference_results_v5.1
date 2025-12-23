@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/work/build/plugins/NMSOptPlugin/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

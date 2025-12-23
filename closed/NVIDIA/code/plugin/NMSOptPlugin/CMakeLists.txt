@@ -22,15 +22,15 @@ find_package(CUDA REQUIRED)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long -pedantic -Wno-deprecated-declarations")
 
 # -------- CONFIGURATION --------
-if (NOT $ENV{TRT_LIB_DIR})
-  set(TRT_LIB_DIR /usr/lib/x86_64-linux-gnu)
-else()
+if (DEFINED ENV{TRT_LIB_DIR})
   set(TRT_LIB_DIR $ENV{TRT_LIB_DIR})
-endif()
-if (NOT $ENV{TRT_INCLUDE_DIR})
-  set(TRT_INCLUDE_DIR /usr/include/x86_64-linux-gnu)
 else()
+  set(TRT_LIB_DIR /usr/lib/x86_64-linux-gnu)
+endif()
+if (DEFINED ENV{TRT_INCLUDE_DIR})
   set(TRT_INCLUDE_DIR $ENV{TRT_INCLUDE_DIR})
+else()
+  set(TRT_INCLUDE_DIR /usr/include/x86_64-linux-gnu)
 endif()
 if (NOT $ENV{CUB_DIR})
   set(CUB_DIR /usr/local/cub)
@@ -94,6 +94,7 @@ endif()
 # Link TensorRT's nvinfer lib
 target_link_libraries(nmsoptplugin PUBLIC ${NVINFER_LIB})
 target_link_libraries(nmsoptplugin PUBLIC ${CUDNN_LIB})
+target_link_libraries(nmsoptplugin PUBLIC ${CUDA_LIBRARIES})
 
 # We need to explicitly state that we need all CUDA files
 # to be built with -dc as the member functions will be called by

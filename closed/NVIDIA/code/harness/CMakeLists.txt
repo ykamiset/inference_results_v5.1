@@ -96,6 +96,11 @@ add_executable(harness_default
     common/logger.cpp
 )
 
+target_link_directories(harness_default
+    PUBLIC
+        /usr/local/tensorrt/lib
+)
+
 target_link_libraries(harness_default
     nvinfer
     nvinfer_plugin
@@ -112,6 +117,7 @@ target_include_directories(harness_default
         ${CUDA_INCLUDE_DIRS}
         ${LOADGEN_INCLUDE_DIR}
         ${LWIS_INCLUDE_DIR}
+        /usr/local/tensorrt/include
         common
 )
 
@@ -145,6 +151,11 @@ else()
             common/logger.cpp
     )
 
+    target_link_directories(harness_dlrm_v2
+            PUBLIC
+                /usr/local/tensorrt/lib
+    )
+
     target_link_libraries(harness_dlrm_v2
             nvinfer
             nvinfer_plugin
@@ -161,6 +172,7 @@ else()
                 ${CUDA_INCLUDE_DIRS}
                 ${LOADGEN_INCLUDE_DIR}
                 ${LWIS_INCLUDE_DIR}
+                /usr/local/tensorrt/include
                 common
                 harness_dlrm_v2
     )
