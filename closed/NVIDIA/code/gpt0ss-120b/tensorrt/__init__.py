@@ -16,6 +16,7 @@ from code.llmlib.launch_server import RunTrtllmServeOp  # noqa: F401
 from code.llmlib.builder import LLMComponentEngine, TRTLLMBuilderOp, TRTLLMQuantizerOp, HFQuantizerOp  # noqa: F401
 from .constants import GPTOSS_120BComponent as Component
 from .dataset import GPTOSS_120BDataset as DataLoader  # noqa: F401
+from .builder import GPTOSS_120BQuantizerConfig as QuantizerConfig
 
 COMPONENT_MAP = {
     Component.GPTOSS_120B: None,

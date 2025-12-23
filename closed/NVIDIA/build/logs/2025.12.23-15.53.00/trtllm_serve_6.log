@@ -1,0 +1,68 @@
+Launch ENV:
+{'NPP_VERSION': '13.0.1.2', 'SHELL': '/bin/bash', 'NVIDIA_VISIBLE_DEVICES': 'void', 'DALI_URL_SUFFIX': '130', 'DALI_BUILD': '', 'CUSOLVER_VERSION': '12.0.4.66', 'NVJITLINK_VERSION': '13.0.88', 'TRT_LLM_VERSION': '1.2.0rc2', 'CUBLAS_VERSION': '13.1.0.3', 'NUMBA_CACHE_DIR': '/work/build/cache', 'NVFATBIN_VERSION': '13.0.85', 'HOSTNAME': 'mlperf-inference-ykamiset-x86-64-10701', 'CUFILE_VERSION': '1.15.1.6', 'MAKE_TERMOUT': '/dev/pts/0', 'CUFFT_VERSION': '12.0.0.61', 'NVIDIA_REQUIRE_CUDA': 'cuda>=9.0', 'SSH_AUTH_SOCK': '/run/host-services/ssh-auth.sock', 'TRITON_CUPTI_PATH': '/usr/local/cuda/include', 'NVVM_VERSION': '13.0.88', 'RUN_ARGS': '--core_type=trtllm_endpoint --benchmarks=gptoss-120b --scenarios=Offline', 'DOCA_VERSION': '3.1.0', 'TENSORBOARD_PORT': '6006', '_CUDA_COMPAT_STATUS': 'System has unsupported display driver / cuda driver combination (CUDA_ERROR_SYSTEM_DRIVER_MISMATCH) cuInit()=803', 'TORCH_CUDA_ARCH_LIST': '7.5 8.0 8.6 9.0 10.0 12.0+PTX', 'NCCL_VERSION': '2.27.7', 'MODEL_OPT_VERSION': '0.35.1', 'CUSPARSE_VERSION': '12.6.3.3', 'NVSHMEM_VERSION': '3.4.5', 'ENV': '/etc/shinit_v2', 'PWD': '/work', 'MLPERF_SCRATCH_PATH': '/data/ykamiset/mlperf_scratch/', 'OPENUCX_VERSION': '1.19.0', 'NSIGHT_SYSTEMS_VERSION': '2025.5.1.121', 'NVIDIA_DRIVER_CAPABILITIES': 'compute,utility,video', 'TORCH_NCCL_USE_COMM_NONBLOCKING': '0', 'POLYGRAPHY_VERSION': '0.49.26', 'PIP_BREAK_SYSTEM_PACKAGES': '1', 'MAKEOVERRIDES': '${-*-command-variables-*-}', 'CUDA_ARCH_LIST': '7.5 8.0 8.6 9.0 10.0 12.0', 'UCC_CL_BASIC_TLS': '^sharp', 'TRT_VERSION': '10.13.3.9', 'CUSPARSELT_VERSION': '0.8.1.1', 'TRT_LLM_GIT_COMMIT': '31116825b39f4e6a6a1e127001f5204b73d1dc32', 'NVIDIA_PRODUCT_NAME': 'PyTorch', 'RDMACORE_VERSION': '56.0', 'NVPL_LAPACK_MATH_MODE': 'PEDANTIC', 'HOME': '/root', 'POWER_LOGS_DIR': '/work/build/power_logs/2025.12.23-15.53.00', 'HISTFILE': '/mnt//home/ykamiset/.mlperf_bash_history', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'COCOAPI_VERSION': '2.0+nv0.8.1', 'PIP_CONSTRAINT': '/etc/pip/constraint.txt', 'CUDA_VERSION': '13.0.2.006', 'TRT_LIB_DIR': '/usr/local/tensorrt/lib', 'PYTORCH_VERSION': '2.9.0a0+145a3a7', 'CURAND_VERSION': '10.4.0.35', 'PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION': 'python', 'PYTORCH_BUILD_NUMBER': '0', 'HARNESS_LD_LIBRARY_PATH': '/opt/nvidia/nvda_nixl/lib/x86_64-linux-gnu:/opt/nvidia/nvda_nixl/lib64:/usr/local/ucx//lib:/usr/local/tensorrt/lib:/usr/local/cuda/lib64:/opt/nvidia/nvda_nixl/lib/x86_64-linux-gnu:/opt/nvidia/nvda_nixl/lib64:/usr/local/ucx//lib:/usr/local/tensorrt/lib:/usr/local/cuda/lib64:/usr/local/lib/python3.12/dist-packages/torch/lib:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/lib:/usr/local/cuda/compat/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/tensorrt/lib/libnvinfer.so:/usr/local/tensorrt/lib/:/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu:/work/build/inference/loadgen/build\t', 'CUBLASMP_VERSION': '0.6.0.84', 'PIP_DEFAULT_TIMEOUT': '100', 'PYTORCH_CUDA_ALLOC_CONF': 'garbage_collection_threshold:0.99999', 'NVFUSER_BUILD_VERSION': 'ed11f2b', 'HPCX_VERSION': '2.24.1', 'MFLAGS': '', 'TRITON_CUDACRT_PATH': '/usr/local/cuda/include', 'CUDNN_FRONTEND_VERSION': '1.14.1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'MAKEFLAGS': ' -- RUN_ARGS=--core_type=trtllm_endpoint\\ --benchmarks=gptoss-120b\\ --scenarios=Offline', 'TERM': 'xterm', 'GDRCOPY_VERSION': '2.5.1', 'NVFUSER_VERSION': 'ed11f2b', 'NVRX_VERSION': '0.4.1+cuda13', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'OPENMPI_VERSION': '4.1.7', 'NVPTXCOMPILER_VERSION': '13.0.88', 'NVJPEG_VERSION': '13.0.1.86', 'LIBRARY_PATH': '/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu:/work/build/inference/loadgen/build:/usr/local/cuda/lib64/stubs:', 'MAKE_TERMERR': '/dev/pts/0', 'CUDA_PATH': '/usr/local/cuda', 'PYTHONIOENCODING': 'utf-8', 'AWS_OFI_NCCL_VERSION': '1.14.0', 'SHLVL': '1', 'BASH_ENV': '/etc/bash.bashrc', 'MAKELEVEL': '1', 'TRITON_CUOBJDUMP_PATH': '/usr/local/cuda/bin/cuobjdump', 'CUDA_DEVICE_MAX_CONNECTIONS': '32', 'CUDNN_VERSION': '9.14.0.64', 'MAXSMVER': '120', 'EFA_VERSION': '1.38.1', 'NSIGHT_COMPUTE_VERSION': '2025.3.1.4', 'TENSORRT_INCLUDE_DIR': '/usr/local/tensorrt/include', 'DATA_DIR': '/data/ykamiset/mlperf_scratch//data', 'DALI_VERSION': '1.51.2', 'NVIDIA_TRITON_SERVER_VERSION': '24.12', 'UCC_EC_CUDA_EXEC_NUM_THREADS': '256', 'JUPYTER_PORT': '8888', 'TRITON_NVDISASM_PATH': '/usr/local/cuda/bin/nvdisasm', 'PYTORCH_HOME': '/opt/pytorch/pytorch', 'LD_LIBRARY_PATH': '/opt/nvidia/nvda_nixl/lib/x86_64-linux-gnu:/opt/nvidia/nvda_nixl/lib64:/usr/local/ucx//lib:/usr/local/tensorrt/lib:/usr/local/cuda/lib64:D_LIBRARY_PATH:RT_LIB_DIR', 'NVIDIA_BUILD_ID': '222058774', 'OMPI_MCA_coll_hcoll_enable': '0', 'CCACHE_DISABLE': '1', 'OPAL_PREFIX': '/opt/hpcx/ompi', 'NVIDIA_CTK_LIBCUDA_DIR': '/usr/lib/x86_64-linux-gnu', 'CUDA_DRIVER_VERSION': '580.95.05', 'TRANSFORMER_ENGINE_VERSION': '2.8', 'LC_ALL': 'C.UTF-8', 'PREPROCESSED_DATA_DIR': '/data/ykamiset/mlperf_scratch//preprocessed_data', 'PYTORCH_BUILD_VERSION': '2.9.0a0+145a3a7', '_CUDA_COMPAT_PATH': '/usr/local/cuda/compat', 'CUDA_HOME': '/usr/local/cuda', 'TRITON_PTXAS_PATH': '/usr/local/cuda/bin/ptxas', 'CUDA_MODULE_LOADING': 'LAZY', 'NVIDIA_REQUIRE_JETPACK_HOST_MOUNTS': '', 'PATH': '/work/.llm_x86_64/bin:/usr/local/cmake/bin:/usr/local/cuda/bin:/usr/local/cmake/bin:/usr/local/cmake/bin:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/mpi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ucx/bin:/opt/amazon/efa/bin:/opt/tensorrt/bin', 'LOG_DIR': '/work/build/logs/2025.12.23-15.53.00', 'HOST_HOSTNAME': 'GPUA81E', 'CUDLA_VERSION': '13.0.2.006', 'MOFED_VERSION': '5.4-rdmacore56.0', 'MODEL_DIR': '/data/ykamiset/mlperf_scratch//models', 'NVIDIA_PYTORCH_VERSION': '25.10', 'TRTOSS_VERSION': '', 'CPATH': '/usr/local/cuda/include:/usr/include/x86_64-linux-gnu:/usr/include/x86_64-linux-gnu/cub:', 'TORCH_ALLOW_TF32_CUBLAS_OVERRIDE': '1', 'TRITON_CUDART_PATH': '/usr/local/cuda/include', 'OLDPWD': '/work/build/inference/tools/submission', '_': '/usr/bin/python3', 'CUDA_VISIBLE_DEVICES': '6'}
+
+Launch CMD:
+trtllm-serve /work/build/models/openai/gpt-oss-120b --host 0.0.0.0 --port 30006 --extra_llm_api_options /work/build/logs/2025.12.23-15.53.00/trtllm_serve_extra_conf.yaml --num_postprocess_workers 2 --tp_size 1 --pp_size 1 --max_num_tokens 14336 --max_batch_size 1024 --max_seq_len 32768 --max_beam_width 1 --tokenizer /work/build/models/openai/gpt-oss-120b --backend pytorch
+
+Extra Config:
+print_iter_log: true
+enable_layerwise_nvtx_marker: false
+stream_interval: 1
+disable_overlap_scheduler: false
+enable_iter_perf_stats: true
+enable_chunked_prefill: false
+scheduler_config:
+  capacity_scheduler_policy: MAX_UTILIZATION
+  context_chunking_policy: FIRST_COME_FIRST_SERVED
+kv_cache_dtype: fp8
+kv_cache_config:
+  free_gpu_memory_fraction: 0.95
+  enable_block_reuse: false
+use_cuda_graph: false
+moe_backend: CUTLASS
+
+
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc2
+ninja: no work to do.
+/usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:94: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
+  class ResponseFormat(OpenAIBaseModel):
+[12/23/2025-15:53:46] [TRT-LLM] [I] Using LLM with PyTorch backend
+[12/23/2025-15:53:46] [TRT-LLM] [E] Failed to parse the arguments for the LLM constructor: LLM got invalid argument: kv_cache_dtype
+[1766526822.264194] [mlperf-inference-ykamiset-x86-64-10701:116547:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.0 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766526822.482367] [mlperf-inference-ykamiset-x86-64-10701:116547:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.0 (loaded from /usr/local/ucx//lib/libucp.so.0)
+Traceback (most recent call last):
+  File "/usr/local/bin/trtllm-serve", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/click/core.py", line 1462, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/click/core.py", line 1383, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/click/core.py", line 1850, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/click/core.py", line 1246, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/click/core.py", line 814, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/commands/serve.py", line 436, in serve
+    launch_server(host, port, llm_args, tool_parser, metadata_server_cfg,
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/commands/serve.py", line 163, in launch_server
+    llm = PyTorchLLM(**llm_args)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/llmapi/llm.py", line 1115, in __init__
+    super().__init__(model, tokenizer, tokenizer_mode, skip_tokenizer_init,
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/llmapi/llm.py", line 1001, in __init__
+    super().__init__(model,
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/llmapi/llm.py", line 182, in __init__
+    raise e
+  File "/usr/local/lib/python3.12/dist-packages/tensorrt_llm/llmapi/llm.py", line 163, in __init__
+    raise ValueError(
+ValueError: LLM got invalid argument: kv_cache_dtype
+[W1223 15:53:47.370274915 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

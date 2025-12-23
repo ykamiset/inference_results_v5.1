@@ -1,0 +1,43 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 14:27:45,455 loadgen.py:47 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 14:27:47,015 main.py:417 INFO] Detected system ID: B200-SXM-180GBx8
+[2025-12-23 14:27:47,016 utils.py:525 WARNING] gptoss-120b virtual env exists, skipping venv setup at /work/.llm_x86_64
+[2025-12-23 14:27:47,016 main.py:115 INFO] Loading configs from /work/configs/B200-SXM-180GBx8/Offline/gptoss-120b.py
+[2025-12-23 14:27:47,017 utils.py:525 WARNING] gptoss-120b virtual env exists, skipping venv setup at /work/.llm_x86_64
+[2025-12-23 14:27:47,026 INFO] [ builder.py:294 HFQuantizerOp.run ] Quantized checkpoint already exists at: /work/build/models/openai/gpt-oss-120b. Set --force_calibration to overwrite.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/work/code/main.py", line 420, in <module>
+    runner.run_all()
+  File "/work/code/main.py", line 407, in run_all
+    self._run_workload(benchmark, scenario)
+  File "/work/code/main.py", line 220, in _run_workload
+    pipeline.run()
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 260, in _wrapper
+    raise exc_info[1]
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 247, in _wrapper
+    retval = obj(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/pipeline/pipeline.py", line 167, in run
+    raise exc
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/pipeline/pipeline.py", line 141, in run
+    run_output = instance.run(self.scratch_space, op_inputs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 260, in _wrapper
+    raise exc_info[1]
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 247, in _wrapper
+    retval = obj(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/ops/loadgen.py", line 89, in run
+    user_conf = self.lg_settings.export_all()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/common/mlcommons/loadgen.py", line 669, in export_all
+    user_conf = self.export_user_conf()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/common/mlcommons/loadgen.py", line 424, in export_user_conf
+    user_conf = scenario_settings(self.scenario)(benchmark_qsl_size_map[self.full_benchmark_name])
+                                                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'gptoss-120b'
+[W1223 14:27:47.840015652 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

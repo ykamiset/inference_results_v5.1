@@ -1,0 +1,95 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:19:56,213 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:19:57,791 main.py:417 INFO] Detected system ID: B200-SXM-180GBx8
+[2025-12-23 17:19:57,792 utils.py:525 WARNING] gpt-oss-120b virtual env exists, skipping venv setup at /work/.llm_x86_64
+[2025-12-23 17:19:57,792 main.py:115 INFO] Loading configs from /work/configs/B200-SXM-180GBx8/Offline/gpt-oss-120b.py
+[2025-12-23 17:19:57,793 utils.py:525 WARNING] gpt-oss-120b virtual env exists, skipping venv setup at /work/.llm_x86_64
+[2025-12-23 17:19:57,802 INFO] [ builder.py:294 HFQuantizerOp.run ] Quantized checkpoint already exists at: /work/build/models/openai/gpt-oss-120b. Set --force_calibration to overwrite.
+/bin/bash: line 1: sudo: command not found
+[2025-12-23 17:20:05,348 harness.py:93 INFO] WARNING: Failed to set vboost slider. Skipping...
+[2025-12-23 17:20:06,276 utils.py:430 INFO] Harness iteration stats will be dumped to: /work/build/logs/2025.12.23-17.19.19/B200-SXM-180GBx8_TRT/gpt-oss-120b/Offline/harness_iteration_stats.log
+######## self.export_user_conf() None
+######## self.export_user_conf() OfflineSettings(qsl_size_default=6396, performance_sample_count=6396, performance_sample_count_override=6396, min_query_count=None, max_query_count=None, min_duration=600000, max_duration=None, test_run=False, target_qps=10)
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:20:36,318 mp_worker_utils.py:221 ERROR] Worker startup failed: . Terminating workers.
+[2025-12-23 17:20:36,660 INFO] [ llmlib/__init__.py:159 TrtllmServeClientHarnessOp.wrap_lg_test ] Test Complete. Cleaning up LLMServer...
+/bin/bash: line 1: sudo: command not found
+[2025-12-23 17:20:37,268 harness.py:101 INFO] WARNING: Failed to reset vboost slider.
+Traceback (most recent call last):
+  File "/work/code/llmlib/cores/mp_worker_utils.py", line 213, in start_worker_processes
+    message = readiness_queue.get(timeout=30.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/queues.py", line 114, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/work/code/main.py", line 420, in <module>
+    runner.run_all()
+  File "/work/code/main.py", line 407, in run_all
+    self._run_workload(benchmark, scenario)
+  File "/work/code/main.py", line 220, in _run_workload
+    pipeline.run()
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 260, in _wrapper
+    raise exc_info[1]
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 247, in _wrapper
+    retval = obj(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/pipeline/pipeline.py", line 167, in run
+    raise exc
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/pipeline/pipeline.py", line 141, in run
+    run_output = instance.run(self.scratch_space, op_inputs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 260, in _wrapper
+    raise exc_info[1]
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 247, in _wrapper
+    retval = obj(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 260, in _wrapper
+    raise exc_info[1]
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 247, in _wrapper
+    retval = obj(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 260, in _wrapper
+    raise exc_info[1]
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 247, in _wrapper
+    retval = obj(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/ops/harness.py", line 380, in run
+    with self._qsl_inst as qsl, \
+  File "/work/code/common/mlcommons/runner.py", line 105, in __exit__
+    raise exc_val
+  File "/work/code/ops/harness.py", line 380, in run
+    with self._qsl_inst as qsl, \
+  File "/work/code/common/mlcommons/runner.py", line 163, in __exit__
+    raise exc_val
+  File "/work/code/ops/harness.py", line 385, in run
+    with self.wrap_lg_test(scratch_space, dependency_outputs):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/work/code/llmlib/__init__.py", line 134, in wrap_lg_test
+    self.server = LLMServerFactory.create_server(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/llmlib/factory.py", line 125, in create_server
+    core = backend_class(**core_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/llmlib/cores/trtllm_endpoint_core.py", line 140, in __init__
+    self._request_manager = http_provider_cls(
+                            ^^^^^^^^^^^^^^^^^^
+  File "/work/code/llmlib/cores/http_async_client.py", line 289, in __init__
+    self._initialize()
+  File "/work/code/llmlib/cores/http_async_client.py", line 352, in _initialize
+    self.worker_processes = self._worker_manager.start_worker_processes(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/llmlib/cores/mp_worker_utils.py", line 235, in start_worker_processes
+    raise TimeoutError("Worker initialization timed out after 30s") from e
+TimeoutError: Worker initialization timed out after 30s

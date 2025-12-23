@@ -1,0 +1,11 @@
+2025-12-23 16:55:46,521 - INFO - Starting metrics capture for endpoints: ['0.0.0.0:30000', '0.0.0.0:30001', '0.0.0.0:30002', '0.0.0.0:30003', '0.0.0.0:30004', '0.0.0.0:30005', '0.0.0.0:30006', '0.0.0.0:30007']
+2025-12-23 16:55:46,521 - INFO - Output directory: /work/build/logs/2025.12.23-16.53.45/endpoint_harness_logs
+2025-12-23 16:55:46,521 - INFO - Poll interval: 2.0s
+2025-12-23 16:55:46,521 - INFO - Writing metrics for 0.0.0.0:30000 to /work/build/logs/2025.12.23-16.53.45/endpoint_harness_logs/metrics_0_0_0_0_30000.jsonl
+2025-12-23 16:55:46,521 - INFO - Writing metrics for 0.0.0.0:30001 to /work/build/logs/2025.12.23-16.53.45/endpoint_harness_logs/metrics_0_0_0_0_30001.jsonl
+2025-12-23 16:55:46,521 - INFO - Writing metrics for 0.0.0.0:30002 to /work/build/logs/2025.12.23-16.53.45/endpoint_harness_logs/metrics_0_0_0_0_30002.jsonl
+2025-12-23 16:55:46,521 - INFO - Writing metrics for 0.0.0.0:30003 to /work/build/logs/2025.12.23-16.53.45/endpoint_harness_logs/metrics_0_0_0_0_30003.jsonl
+2025-12-23 16:55:46,521 - INFO - Writing metrics for 0.0.0.0:30004 to /work/build/logs/2025.12.23-16.53.45/endpoint_harness_logs/metrics_0_0_0_0_30004.jsonl
+2025-12-23 16:55:46,521 - INFO - Writing metrics for 0.0.0.0:30005 to /work/build/logs/2025.12.23-16.53.45/endpoint_harness_logs/metrics_0_0_0_0_30005.jsonl
+2025-12-23 16:55:46,521 - INFO - Writing metrics for 0.0.0.0:30006 to /work/build/logs/2025.12.23-16.53.45/endpoint_harness_logs/metrics_0_0_0_0_30006.jsonl
+2025-12-23 16:55:46,521 - INFO - Writing metrics for 0.0.0.0:30007 to /work/build/logs/2025.12.23-16.53.45/endpoint_harness_logs/metrics_0_0_0_0_30007.jsonl

@@ -1,0 +1,191 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:28:10,277 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:28:11,579 main.py:417 INFO] Detected system ID: B200-SXM-180GBx8
+[2025-12-23 17:28:11,580 utils.py:525 WARNING] gpt-oss-120b virtual env exists, skipping venv setup at /work/.llm_x86_64
+[2025-12-23 17:28:11,580 main.py:115 INFO] Loading configs from /work/configs/B200-SXM-180GBx8/Offline/gpt-oss-120b.py
+[2025-12-23 17:28:11,581 utils.py:525 WARNING] gpt-oss-120b virtual env exists, skipping venv setup at /work/.llm_x86_64
+[2025-12-23 17:28:11,590 INFO] [ builder.py:294 HFQuantizerOp.run ] Quantized checkpoint already exists at: /work/build/models/openai/gpt-oss-120b. Set --force_calibration to overwrite.
+/bin/bash: line 1: sudo: command not found
+[2025-12-23 17:28:19,265 harness.py:93 INFO] WARNING: Failed to set vboost slider. Skipping...
+[2025-12-23 17:28:20,037 utils.py:430 INFO] Harness iteration stats will be dumped to: /work/build/logs/2025.12.23-17.27.35/B200-SXM-180GBx8_TRT/gpt-oss-120b/Offline/harness_iteration_stats.log
+######## self.export_user_conf() None
+######## self.export_user_conf() OfflineSettings(qsl_size_default=6396, performance_sample_count=6396, performance_sample_count_override=6396, min_query_count=None, max_query_count=None, min_duration=600000, max_duration=None, test_run=False, target_qps=10)
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:28:46,211 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:28:47,040 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:28:49,514 INFO] [ TrtllmEndpointCore#0 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30000, max_concurrency: 1024)
+[2025-12-23 17:28:49,516 INFO] [ factory.py:129 create_server ] Initialized TrtllmEndpointCore#0 with HarnessConfig:
+TrtllmEndpointConfig(_core_type=None,
+                     tensor_parallelism=1,
+                     pipeline_parallelism=1,
+                     moe_expert_parallelism=None,
+                     enable_ttft_latency_tracker=False,
+                     show_steady_state_progress=False,
+                     gen_config_path=PosixPath('code/gpt0ss-120b/tensorrt/generation_config.json'),
+                     workload=<code.common.workload.Workload object at 0x7f4dfa9ca9c0>,
+                     traffic_distribution_policy='round_robin',
+                     log_dir=PosixPath('/work/build/logs/2025.12.23-17.27.35'),
+                     capture_server_logs_dir=None,
+                     gen_config=GenerationConfig(eos_token_id=[200002, 199999,
+                                                               200012],
+                                                 bos_token_id=199998,
+                                                 max_output_len=32768,
+                                                 min_output_len=1,
+                                                 name='gpt-oss-120b',
+                                                 runtime_beam_width=1,
+                                                 streaming=False,
+                                                 temperature=1.0,
+                                                 top_k=1,
+                                                 top_p=0.001,
+                                                 use_stop_tokens=False),
+                     random_seed=0,
+                     build_flags={'context_fmha': 'enable',
+                                  'enable_attention_dp': None,
+                                  'kv_cache_type': 'paged',
+                                  'max_batch_size': 1024,
+                                  'max_beam_width': 1,
+                                  'max_input_len': 2048,
+                                  'max_num_tokens': 20480,
+                                  'max_seq_len': 32768,
+                                  'moe_expert_parallelism': None,
+                                  'multiple_profiles': 'enable',
+                                  'pipeline_parallelism': 1,
+                                  'remove_input_padding': 'enable',
+                                  'tensor_parallelism': 1,
+                                  'tokens_per_block': 32,
+                                  'torch_compile_enabled': None,
+                                  'use_fp8_context_fmha': 'disable',
+                                  'use_fused_mlp': 'enable',
+                                  'use_paged_context_fmha': 'disable'},
+                     runtime_flags={'adp_balancing_batching_wait_iters': 10,
+                                    'adp_balancing_enable': True,
+                                    'adp_balancing_timeout_iters': 500,
+                                    'batch_scheduler_policy': 'MAX_UTILIZATION',
+                                    'context_chunking_policy': 'FIRST_COME_FIRST_SERVED',
+                                    'cuda_graph_batch_sizes': None,
+                                    'cuda_graph_padding_enabled': False,
+                                    'dynamic_batch_moving_average_window': 128,
+                                    'enable_batch_size_tuning': False,
+                                    'enable_chunked_context': False,
+                                    'enable_max_num_tokens_tuning': False,
+                                    'exclude_input_from_output': True,
+                                    'http_backend': 'custom_http',
+                                    'kvcache_free_gpu_mem_frac': 0.95,
+                                    'max_batch_size': 1024,
+                                    'max_concurrency': 1024,
+                                    'max_num_tokens': 14336,
+                                    'moe_backend': 'CUTLASS',
+                                    'moe_expert_parallelism': None,
+                                    'num_postprocess_workers': 2,
+                                    'pipeline_parallelism': 1,
+                                    'tensor_parallelism': 1,
+                                    'trtllm_backend': 'pytorch',
+                                    'use_cuda_graphs': False,
+                                    'use_inflight_batching': True,
+                                    'workers_per_core': 2},
+                     checkpoint_flags={'kv_cache_dtype': None},
+                     use_cuda_graphs=False,
+                     model_path=PosixPath('/work/build/models/openai/gpt-oss-120b'),
+                     extra_config_yaml='enable_attention_dp: false\n'
+                                       'enable_chunked_prefill: true\n'
+                                       'kv_cache_config:\n'
+                                       '  dtype: fp8\n'
+                                       '  enable_block_reuse: false\n'
+                                       'cuda_graph_config:\n'
+                                       '  enable_padding: true\n'
+                                       '  max_batch_size: 1024\n',
+                     trtllm_endpoint_urls=['0.0.0.0:30000', '0.0.0.0:30001',
+                                           '0.0.0.0:30002', '0.0.0.0:30003',
+                                           '0.0.0.0:30004', '0.0.0.0:30005',
+                                           '0.0.0.0:30006', '0.0.0.0:30007'],
+                     endpoint_url='0.0.0.0:30000',
+                     is_mpi_task=False,
+                     global_size=None)
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:29:18,319 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:29:18,626 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:29:19,552 mp_worker_utils.py:221 ERROR] Worker startup failed: . Terminating workers.
+[2025-12-23 17:29:19,823 INFO] [ llmlib/__init__.py:159 TrtllmServeClientHarnessOp.wrap_lg_test ] Test Complete. Cleaning up LLMServer...
+/bin/bash: line 1: sudo: command not found
+[2025-12-23 17:29:20,027 harness.py:101 INFO] WARNING: Failed to reset vboost slider.
+Traceback (most recent call last):
+  File "/work/code/llmlib/cores/mp_worker_utils.py", line 213, in start_worker_processes
+    message = readiness_queue.get(timeout=30.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/queues.py", line 114, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/work/code/main.py", line 420, in <module>
+    runner.run_all()
+  File "/work/code/main.py", line 407, in run_all
+    self._run_workload(benchmark, scenario)
+  File "/work/code/main.py", line 220, in _run_workload
+    pipeline.run()
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 260, in _wrapper
+    raise exc_info[1]
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 247, in _wrapper
+    retval = obj(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/pipeline/pipeline.py", line 167, in run
+    raise exc
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/pipeline/pipeline.py", line 141, in run
+    run_output = instance.run(self.scratch_space, op_inputs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 260, in _wrapper
+    raise exc_info[1]
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 247, in _wrapper
+    retval = obj(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 260, in _wrapper
+    raise exc_info[1]
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 247, in _wrapper
+    retval = obj(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 260, in _wrapper
+    raise exc_info[1]
+  File "/usr/local/lib/python3.12/dist-packages/nvmitten/debug/debug_manager.py", line 247, in _wrapper
+    retval = obj(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/ops/harness.py", line 380, in run
+    with self._qsl_inst as qsl, \
+  File "/work/code/common/mlcommons/runner.py", line 105, in __exit__
+    raise exc_val
+  File "/work/code/ops/harness.py", line 380, in run
+    with self._qsl_inst as qsl, \
+  File "/work/code/common/mlcommons/runner.py", line 163, in __exit__
+    raise exc_val
+  File "/work/code/ops/harness.py", line 385, in run
+    with self.wrap_lg_test(scratch_space, dependency_outputs):
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/work/code/llmlib/__init__.py", line 134, in wrap_lg_test
+    self.server = LLMServerFactory.create_server(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/llmlib/factory.py", line 125, in create_server
+    core = backend_class(**core_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/llmlib/cores/trtllm_endpoint_core.py", line 140, in __init__
+    self._request_manager = http_provider_cls(
+                            ^^^^^^^^^^^^^^^^^^
+  File "/work/code/llmlib/cores/http_async_client.py", line 289, in __init__
+    self._initialize()
+  File "/work/code/llmlib/cores/http_async_client.py", line 352, in _initialize
+    self.worker_processes = self._worker_manager.start_worker_processes(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/llmlib/cores/mp_worker_utils.py", line 235, in start_worker_processes
+    raise TimeoutError("Worker initialization timed out after 30s") from e
+TimeoutError: Worker initialization timed out after 30s

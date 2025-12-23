@@ -1,0 +1,232 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 15:23:50,975 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:23:52,650 main.py:417 INFO] Detected system ID: B200-SXM-180GBx8
+[2025-12-23 15:23:52,650 utils.py:525 WARNING] gpt-oss-120b virtual env exists, skipping venv setup at /work/.llm_x86_64
+[2025-12-23 15:23:52,651 main.py:115 INFO] Loading configs from /work/configs/B200-SXM-180GBx8/Offline/gpt-oss-120b.py
+[2025-12-23 15:23:52,651 utils.py:525 WARNING] gpt-oss-120b virtual env exists, skipping venv setup at /work/.llm_x86_64
+[2025-12-23 15:23:52,660 INFO] [ builder.py:294 HFQuantizerOp.run ] Quantized checkpoint already exists at: /work/build/models/openai/gpt-oss-120b. Set --force_calibration to overwrite.
+/bin/dash: 1: sudo: not found
+[2025-12-23 15:23:55,532 harness.py:93 INFO] WARNING: Failed to set vboost slider. Skipping...
+[2025-12-23 15:23:56,246 utils.py:430 INFO] Harness iteration stats will be dumped to: /work/build/logs/2025.12.23-15.23.34/B200-SXM-180GBx8_TRT/gpt-oss-120b/Offline/harness_iteration_stats.log
+######## self.export_user_conf() None
+######## self.export_user_conf() OfflineSettings(qsl_size_default=6396, performance_sample_count=6396, performance_sample_count_override=6396, min_query_count=None, max_query_count=None, min_duration=600000, max_duration=None, test_run=False, target_qps=300)
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 15:24:05,483 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:24:05,597 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:24:07,443 INFO] [ TrtllmEndpointCore#0 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30000, max_concurrency: 1024)
+[2025-12-23 15:24:07,445 INFO] [ factory.py:129 create_server ] Initialized TrtllmEndpointCore#0 with HarnessConfig:
+TrtllmEndpointConfig(_core_type=None,
+                     tensor_parallelism=1,
+                     pipeline_parallelism=1,
+                     moe_expert_parallelism=None,
+                     enable_ttft_latency_tracker=False,
+                     show_steady_state_progress=False,
+                     gen_config_path=PosixPath('code/gpt0ss-120b/tensorrt/generation_config.json'),
+                     workload=<code.common.workload.Workload object at 0x7f3c200dd400>,
+                     traffic_distribution_policy='round_robin',
+                     log_dir=PosixPath('/work/build/logs/2025.12.23-15.23.34'),
+                     capture_server_logs_dir=None,
+                     gen_config=GenerationConfig(eos_token_id=[200002, 199999,
+                                                               200012],
+                                                 bos_token_id=199998,
+                                                 max_output_len=32768,
+                                                 min_output_len=1,
+                                                 name='gpt-oss-120b',
+                                                 runtime_beam_width=1,
+                                                 streaming=False,
+                                                 temperature=1.0,
+                                                 top_k=1,
+                                                 top_p=0.001,
+                                                 use_stop_tokens=False),
+                     random_seed=0,
+                     build_flags={'context_fmha': 'enable',
+                                  'enable_attention_dp': None,
+                                  'kv_cache_type': 'paged',
+                                  'max_batch_size': 1024,
+                                  'max_beam_width': 1,
+                                  'max_input_len': 2048,
+                                  'max_num_tokens': 20480,
+                                  'max_seq_len': 32768,
+                                  'moe_expert_parallelism': None,
+                                  'multiple_profiles': 'enable',
+                                  'pipeline_parallelism': 1,
+                                  'remove_input_padding': 'enable',
+                                  'tensor_parallelism': 1,
+                                  'tokens_per_block': 32,
+                                  'torch_compile_enabled': None,
+                                  'use_fp8_context_fmha': 'disable',
+                                  'use_fused_mlp': 'enable',
+                                  'use_paged_context_fmha': 'disable'},
+                     runtime_flags={'adp_balancing_batching_wait_iters': 10,
+                                    'adp_balancing_enable': True,
+                                    'adp_balancing_timeout_iters': 500,
+                                    'batch_scheduler_policy': 'MAX_UTILIZATION',
+                                    'context_chunking_policy': 'FIRST_COME_FIRST_SERVED',
+                                    'cuda_graph_batch_sizes': None,
+                                    'cuda_graph_padding_enabled': False,
+                                    'dynamic_batch_moving_average_window': 128,
+                                    'enable_batch_size_tuning': False,
+                                    'enable_chunked_context': False,
+                                    'enable_max_num_tokens_tuning': False,
+                                    'exclude_input_from_output': True,
+                                    'http_backend': 'custom_http',
+                                    'kvcache_free_gpu_mem_frac': 0.95,
+                                    'max_batch_size': 1024,
+                                    'max_concurrency': 1024,
+                                    'max_num_tokens': 14336,
+                                    'moe_backend': 'CUTLASS',
+                                    'moe_expert_parallelism': None,
+                                    'num_postprocess_workers': 2,
+                                    'pipeline_parallelism': 1,
+                                    'tensor_parallelism': 1,
+                                    'trtllm_backend': 'pytorch',
+                                    'use_cuda_graphs': False,
+                                    'use_inflight_batching': True,
+                                    'workers_per_core': 2},
+                     checkpoint_flags={'kv_cache_dtype': 'fp8'},
+                     use_cuda_graphs=False,
+                     model_path=PosixPath('/work/build/models/openai/gpt-oss-120b'),
+                     extra_config_yaml='print_iter_log: true\n'
+                                       'enable_layerwise_nvtx_marker: false\n'
+                                       'stream_interval: 1\n'
+                                       'disable_overlap_scheduler: false\n'
+                                       'enable_iter_perf_stats: true\n'
+                                       'enable_chunked_prefill: false\n'
+                                       'scheduler_config:\n'
+                                       '  capacity_scheduler_policy: '
+                                       'MAX_UTILIZATION\n'
+                                       '  context_chunking_policy: '
+                                       'FIRST_COME_FIRST_SERVED\n'
+                                       'kv_cache_dtype: fp8\n'
+                                       'kv_cache_config:\n'
+                                       '  free_gpu_memory_fraction: 0.95\n'
+                                       '  enable_block_reuse: false\n'
+                                       'use_cuda_graph: false\n'
+                                       'moe_backend: CUTLASS\n',
+                     trtllm_endpoint_urls=['0.0.0.0:30000', '0.0.0.0:30001',
+                                           '0.0.0.0:30002', '0.0.0.0:30003',
+                                           '0.0.0.0:30004', '0.0.0.0:30005',
+                                           '0.0.0.0:30006', '0.0.0.0:30007'],
+                     endpoint_url='0.0.0.0:30000',
+                     is_mpi_task=False,
+                     global_size=None)
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 15:24:16,275 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:24:16,307 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:24:18,151 INFO] [ TrtllmEndpointCore#1 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30001, max_concurrency: 1024)
+[2025-12-23 15:24:18,152 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#1.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 15:24:28,563 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:24:28,611 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:24:30,445 INFO] [ TrtllmEndpointCore#2 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30002, max_concurrency: 1024)
+[2025-12-23 15:24:30,446 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#2.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 15:24:39,030 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:24:39,124 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:24:40,968 INFO] [ TrtllmEndpointCore#3 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30003, max_concurrency: 1024)
+[2025-12-23 15:24:40,969 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#3.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 15:24:49,675 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:24:49,803 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:24:51,671 INFO] [ TrtllmEndpointCore#4 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30004, max_concurrency: 1024)
+[2025-12-23 15:24:51,672 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#4.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 15:25:00,670 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:25:00,741 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:25:02,523 INFO] [ TrtllmEndpointCore#5 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30005, max_concurrency: 1024)
+[2025-12-23 15:25:02,524 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#5.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 15:25:11,739 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:25:11,949 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:25:13,713 INFO] [ TrtllmEndpointCore#6 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30006, max_concurrency: 1024)
+[2025-12-23 15:25:13,714 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#6.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 15:25:22,707 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:25:22,737 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 15:25:24,578 INFO] [ TrtllmEndpointCore#7 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30007, max_concurrency: 1024)
+[2025-12-23 15:25:24,579 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#7.
+[2025-12-23 15:25:24,579 INFO] [ factory.py:137 create_server ] Factory created 8 CoreType.TRTLLM_ENDPOINT cores
+[2025-12-23 15:25:24,580 INFO] [ LLMServer-89691 server.py:112 LLMServer.__init__ ] LLMServer initialized with 8 cores
+[2025-12-23 15:25:24,581 INFO] [ llmlib/__init__.py:144 TrtllmServeClientHarnessOp.wrap_lg_test ] Warming up the server...
+[2025-12-23 15:25:24,583 INFO] [ warmup.py:44 WarmupManager._run_health_checks_with_retry ] Running health checks on all cores...
+[2025-12-23 15:25:24,950 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#7 failed: Connection error.. Retrying in 5.0s...
+[2025-12-23 15:25:24,951 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#2 failed: Connection error.. Retrying in 5.0s...
+[2025-12-23 15:25:24,951 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#4 failed: Connection error.. Retrying in 5.0s...
+[2025-12-23 15:25:24,952 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#6 failed: Connection error.. Retrying in 5.0s...
+[2025-12-23 15:25:24,953 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#0 failed: Connection error.. Retrying in 5.0s...
+[2025-12-23 15:25:24,954 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#5 failed: Connection error.. Retrying in 5.0s...
+[2025-12-23 15:25:24,954 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#1 failed: Connection error.. Retrying in 5.0s...
+[2025-12-23 15:25:24,955 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#3 failed: Connection error.. Retrying in 5.0s...
+[2025-12-23 15:25:30,084 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#0 failed: Connection error.. Retrying in 6.5s...
+[2025-12-23 15:25:30,085 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#5 failed: Connection error.. Retrying in 6.5s...
+[2025-12-23 15:25:30,085 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#6 failed: Connection error.. Retrying in 6.5s...
+[2025-12-23 15:25:30,086 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#7 failed: Connection error.. Retrying in 6.5s...
+[2025-12-23 15:25:30,087 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#2 failed: Connection error.. Retrying in 6.5s...
+[2025-12-23 15:25:30,088 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#1 failed: Connection error.. Retrying in 6.5s...
+[2025-12-23 15:25:30,090 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#4 failed: Connection error.. Retrying in 6.5s...
+[2025-12-23 15:25:30,092 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#3 failed: Connection error.. Retrying in 6.5s...
+[2025-12-23 15:25:36,722 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#6 failed: Connection error.. Retrying in 8.5s...
+[2025-12-23 15:25:36,723 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#5 failed: Connection error.. Retrying in 8.5s...
+[2025-12-23 15:25:36,723 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#3 failed: Connection error.. Retrying in 8.5s...
+[2025-12-23 15:25:36,724 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#4 failed: Connection error.. Retrying in 8.5s...
+[2025-12-23 15:25:36,725 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#7 failed: Connection error.. Retrying in 8.5s...
+[2025-12-23 15:25:36,725 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#1 failed: Connection error.. Retrying in 8.5s...
+[2025-12-23 15:25:36,726 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#0 failed: Connection error.. Retrying in 8.5s...
+[2025-12-23 15:25:36,726 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#2 failed: Connection error.. Retrying in 8.5s...
+[2025-12-23 15:25:45,314 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#7 failed: Connection error.. Retrying in 11.0s...
+[2025-12-23 15:25:45,314 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#4 failed: Connection error.. Retrying in 11.0s...
+[2025-12-23 15:25:45,315 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#3 failed: Connection error.. Retrying in 11.0s...
+[2025-12-23 15:25:45,316 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#0 failed: Connection error.. Retrying in 11.0s...
+[2025-12-23 15:25:45,316 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#6 failed: Connection error.. Retrying in 11.0s...
+[2025-12-23 15:25:45,317 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#2 failed: Connection error.. Retrying in 11.0s...
+[2025-12-23 15:25:45,317 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#1 failed: Connection error.. Retrying in 11.0s...
+[2025-12-23 15:25:45,318 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#5 failed: Connection error.. Retrying in 11.0s...
+[2025-12-23 15:25:56,434 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#0 failed: Connection error.. Retrying in 14.3s...
+[2025-12-23 15:25:56,435 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#4 failed: Connection error.. Retrying in 14.3s...
+[2025-12-23 15:25:56,435 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#6 failed: Connection error.. Retrying in 14.3s...
+[2025-12-23 15:25:56,436 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#1 failed: Connection error.. Retrying in 14.3s...
+[2025-12-23 15:25:56,436 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#7 failed: Connection error.. Retrying in 14.3s...
+[2025-12-23 15:25:56,437 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#3 failed: Connection error.. Retrying in 14.3s...
+[2025-12-23 15:25:56,437 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#2 failed: Connection error.. Retrying in 14.3s...
+[2025-12-23 15:25:56,441 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#5 failed: Connection error.. Retrying in 14.3s...
+[2025-12-23 15:26:10,850 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#2 failed: Connection error.. Retrying in 18.6s...
+[2025-12-23 15:26:10,851 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#6 failed: Connection error.. Retrying in 18.6s...
+[2025-12-23 15:26:10,851 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#0 failed: Connection error.. Retrying in 18.6s...
+[2025-12-23 15:26:10,852 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#4 failed: Connection error.. Retrying in 18.6s...
+[2025-12-23 15:26:10,852 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#3 failed: Connection error.. Retrying in 18.6s...
+[2025-12-23 15:26:10,853 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#7 failed: Connection error.. Retrying in 18.6s...
+[2025-12-23 15:26:10,855 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#5 failed: Connection error.. Retrying in 18.6s...
+[2025-12-23 15:26:10,856 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#1 failed: Connection error.. Retrying in 18.6s...
+[2025-12-23 15:26:29,552 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#0 failed: Connection error.. Retrying in 24.1s...
+[2025-12-23 15:26:29,552 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#3 failed: Connection error.. Retrying in 24.1s...
+[2025-12-23 15:26:29,553 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#4 failed: Connection error.. Retrying in 24.1s...
+[2025-12-23 15:26:29,553 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#6 failed: Connection error.. Retrying in 24.1s...
+[2025-12-23 15:26:29,554 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#5 failed: Connection error.. Retrying in 24.1s...
+[2025-12-23 15:26:29,554 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#7 failed: Connection error.. Retrying in 24.1s...
+[2025-12-23 15:26:29,556 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#2 failed: Connection error.. Retrying in 24.1s...
+[2025-12-23 15:26:29,557 WARNING] [ warmup.py:63 WarmupManager.check_core ] Health check for TrtllmEndpointCore#1 failed: Connection error.. Retrying in 24.1s...

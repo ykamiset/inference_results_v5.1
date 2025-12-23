@@ -19,8 +19,8 @@ class GPTOSS_120BDataset(LLMDataLoader):
 
     def __init__(self, *args, **kwargs):
         super().__init__(
-            ['input_ids_padded.npy',
-             'input_lens.npy'],
+            ['input_ids_padded_perf_eval.npy',
+             'input_lens_perf_eval.npy'],
             *args,
             **kwargs
         )
@@ -28,7 +28,7 @@ class GPTOSS_120BDataset(LLMDataLoader):
         # Truncate inputs to proper lengths
         self.input_table = [
             input_ids[:input_len].reshape(-1).tolist()
-            for input_ids, input_len in zip(self.input_ids_padded, self.input_lens)
+            for input_ids, input_len in zip(self.input_ids_padded_perf_eval, self.input_lens_perf_eval)
         ]
         logging.debug("Completed pre-processing input tokens. Ready for inference.")
 

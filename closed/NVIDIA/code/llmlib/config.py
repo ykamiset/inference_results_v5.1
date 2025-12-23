@@ -474,58 +474,69 @@ class TrtllmExtraYAMLConfig(TrtllmHarnessConfig):
         Returns:
             str: YAML formatted configuration content
         """
-        config_dict = {}
-
-        using_pytorch = runtime_flags['trtllm_backend'] == 'pytorch'
-        if using_pytorch:
-            config_dict |= {**cls.DEFAULT_EXTRA_CONFIG}
-
-        config_dict |= {
-            'enable_chunked_prefill': runtime_flags['enable_chunked_context'],
-            'scheduler_config': {
-                'capacity_scheduler_policy': runtime_flags['batch_scheduler_policy'],
-                'context_chunking_policy': runtime_flags['context_chunking_policy'],
+        config_dict = {
+            "enable_attention_dp":False,
+            "enable_chunked_prefill":True,
+            "kv_cache_config":{
+                "dtype":"fp8",
+                "enable_block_reuse":False
             },
-
-            'kv_cache_dtype': checkpoint_flags['kv_cache_dtype'],
-            'kv_cache_config': {
-                'free_gpu_memory_fraction': runtime_flags['kvcache_free_gpu_mem_frac'],
-                'enable_block_reuse': False,
-            },
-
-            'enable_attention_dp': build_flags['enable_attention_dp'],
-        }
-
-        if using_pytorch:
-            config_dict |= {
-                'torch_compile_enabled': build_flags['torch_compile_enabled'],
-                'use_cuda_graph': runtime_flags['use_cuda_graphs'],
-                'moe_backend': runtime_flags['moe_backend'],
+            "cuda_graph_config":{
+                "enable_padding":True,
+                "max_batch_size":1024,
             }
+            }
+        
+        # using_pytorch = runtime_flags['trtllm_backend'] == 'pytorch'
+        # if using_pytorch:
+        #     config_dict |= {**cls.DEFAULT_EXTRA_CONFIG}
 
-            if config_dict['use_cuda_graph']:
-                assert runtime_flags['cuda_graph_batch_sizes'] is not None, \
-                    logging.error(f"CUDA graphs enabled but no cuda_graph_batch_sizes provided. ")
+        # config_dict |= {
+        #     'enable_chunked_prefill': runtime_flags['enable_chunked_context'],
+        #     'scheduler_config': {
+        #         'capacity_scheduler_policy': runtime_flags['batch_scheduler_policy'],
+        #         'context_chunking_policy': runtime_flags['context_chunking_policy'],
+        #     },
 
-                config_dict |= {
-                    'cuda_graph_padding_enabled': runtime_flags['cuda_graph_padding_enabled'],
-                    'cuda_graph_batch_sizes': runtime_flags['cuda_graph_batch_sizes'],
+        #     'kv_cache_dtype': checkpoint_flags['kv_cache_dtype'],
+        #     'kv_cache_config': {
+        #         'free_gpu_memory_fraction': runtime_flags['kvcache_free_gpu_mem_frac'],
+        #         'enable_block_reuse': False,
+        #     },
 
-                    # NOTE(vir): we dont rely on automatic batch-sizes
-                    # 'cuda_graph_max_batch_size': 0
-                }
+        #     'enable_attention_dp': build_flags['enable_attention_dp'],
+        # }
 
-            if config_dict['enable_attention_dp'] and runtime_flags['adp_balancing_enable']:
-                config_dict |= {
-                    'attention_dp_config': {
-                        'enable_balance': runtime_flags['adp_balancing_enable'],
-                        'batching_wait_iters': runtime_flags['adp_balancing_batching_wait_iters'],
-                        'timeout_iters': runtime_flags['adp_balancing_timeout_iters'],
-                    }
-                }
+        # if using_pytorch:
+        #     config_dict |= {
+        #         'torch_compile_enabled': build_flags['torch_compile_enabled'],
+        #         'use_cuda_graph': runtime_flags['use_cuda_graphs'],
+        #         'moe_backend': runtime_flags['moe_backend'],
+        #     }
 
-        if not using_pytorch and runtime_flags['use_cuda_graphs']:
-            raise NotImplementedError("CUDA Graphs are not supported in TRT/C++ backend yet.")
+        #     if config_dict['use_cuda_graph']:
+        #         assert runtime_flags['cuda_graph_batch_sizes'] is not None, \
+        #             logging.error(f"CUDA graphs enabled but no cuda_graph_batch_sizes provided. ")
+
+        #         config_dict |= {
+        #             'cuda_graph_padding_enabled': runtime_flags['cuda_graph_padding_enabled'],
+        #             'cuda_graph_batch_sizes': runtime_flags['cuda_graph_batch_sizes'],
+
+        #             # NOTE(vir): we dont rely on automatic batch-sizes
+        #             # 'cuda_graph_max_batch_size': 0
+        #         }
+
+        #     if config_dict['enable_attention_dp'] and runtime_flags['adp_balancing_enable']:
+        #         config_dict |= {
+        #             'attention_dp_config': {
+        #                 'enable_balance': runtime_flags['adp_balancing_enable'],
+        #                 'batching_wait_iters': runtime_flags['adp_balancing_batching_wait_iters'],
+        #                 'timeout_iters': runtime_flags['adp_balancing_timeout_iters'],
+        #             }
+        #         }
+
+        # if not using_pytorch and runtime_flags['use_cuda_graphs']:
+        #     raise NotImplementedError("CUDA Graphs are not supported in TRT/C++ backend yet.")
 
         # create file content string
         yaml_content = get_yaml_string(config_dict)

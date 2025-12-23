@@ -39,8 +39,11 @@ from .. import constants as C
 from ...fields import harness as harness_fields
 from ...fields import loadgen as lg_fields
 from ...fields import models as model_fields
+# print("######### paths.MLCOMMONS_INF_REPO", paths.MLCOMMONS_INF_REPO)
+
 
 submission_checker = import_from([paths.MLCOMMONS_INF_REPO / "tools" / "submission"] + sys.path, "submission_checker")
+# print("######### submission_checker.MODEL_CONFIG", submission_checker.MODEL_CONFIG)
 _latest_ver = max(versioning.parse(ver_key) for ver_key in submission_checker.MODEL_CONFIG.keys())
 _vstr = f"v{_latest_ver}"
 if _vstr != C.VERSION:
@@ -528,7 +531,8 @@ class LoadgenSettings:
                 C.Benchmark.DeepSeek_R1: "Original Huggingface model weights",
                 C.Benchmark.SDXL: "Huggingface model weights hosted by MLCommons",
                 C.Benchmark.WHISPER: "Original Huggingface model weights",
-                C.Benchmark.RGAT: "RGAT.pt hosted by MLCommons"
+                C.Benchmark.RGAT: "RGAT.pt hosted by MLCommons",
+                C.Benchmark.GPTOSS_120B: "Original Huggingface model weights"
             }
             weight_transformations_map = {
                 C.Benchmark.ResNet50: "quantization, affine fusion",
@@ -544,7 +548,8 @@ class LoadgenSettings:
                 C.Benchmark.SDXL: "quantization, affine fusion",
                 C.Benchmark.RGAT: "none",
                 C.Benchmark.WHISPER: "quantization, affine fusion",
-                C.Benchmark.RGAT: "none"
+                C.Benchmark.RGAT: "none",
+                C.Benchmark.GPTOSS_120B: "none"
             }
 
         data = {
@@ -666,7 +671,9 @@ class LoadgenSettings:
             UserConf object with the exported configuration
         """
         self.export_mlperf_conf()
+        print("######## self.export_user_conf()", self.export_mlperf_conf())
         user_conf = self.export_user_conf()
+        print("######## self.export_user_conf()", user_conf)
         self.export_readme()
         self.export_calib_adoc()
         self.export_system_json()

@@ -1,0 +1,192 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:03:12,286 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:03:14,202 main.py:417 INFO] Detected system ID: B200-SXM-180GBx8
+[2025-12-23 17:03:14,203 utils.py:525 WARNING] gpt-oss-120b virtual env exists, skipping venv setup at /work/.llm_x86_64
+[2025-12-23 17:03:14,203 main.py:115 INFO] Loading configs from /work/configs/B200-SXM-180GBx8/Offline/gpt-oss-120b.py
+[2025-12-23 17:03:14,204 utils.py:525 WARNING] gpt-oss-120b virtual env exists, skipping venv setup at /work/.llm_x86_64
+[2025-12-23 17:03:14,213 INFO] [ builder.py:294 HFQuantizerOp.run ] Quantized checkpoint already exists at: /work/build/models/openai/gpt-oss-120b. Set --force_calibration to overwrite.
+/bin/bash: line 1: sudo: command not found
+[2025-12-23 17:03:21,390 harness.py:93 INFO] WARNING: Failed to set vboost slider. Skipping...
+[2025-12-23 17:03:22,085 utils.py:430 INFO] Harness iteration stats will be dumped to: /work/build/logs/2025.12.23-17.02.50/B200-SXM-180GBx8_TRT/gpt-oss-120b/Offline/harness_iteration_stats.log
+######## self.export_user_conf() None
+######## self.export_user_conf() OfflineSettings(qsl_size_default=6396, performance_sample_count=6396, performance_sample_count_override=6396, min_query_count=None, max_query_count=None, min_duration=600000, max_duration=None, test_run=False, target_qps=10)
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:03:33,333 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:03:33,432 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:03:35,437 INFO] [ TrtllmEndpointCore#0 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30000, max_concurrency: 1024)
+[2025-12-23 17:03:35,438 INFO] [ factory.py:129 create_server ] Initialized TrtllmEndpointCore#0 with HarnessConfig:
+TrtllmEndpointConfig(_core_type=None,
+                     tensor_parallelism=1,
+                     pipeline_parallelism=1,
+                     moe_expert_parallelism=None,
+                     enable_ttft_latency_tracker=False,
+                     show_steady_state_progress=False,
+                     gen_config_path=PosixPath('code/gpt0ss-120b/tensorrt/generation_config.json'),
+                     workload=<code.common.workload.Workload object at 0x7f437225c3b0>,
+                     traffic_distribution_policy='round_robin',
+                     log_dir=PosixPath('/work/build/logs/2025.12.23-17.02.50'),
+                     capture_server_logs_dir=None,
+                     gen_config=GenerationConfig(eos_token_id=[200002, 199999,
+                                                               200012],
+                                                 bos_token_id=199998,
+                                                 max_output_len=32768,
+                                                 min_output_len=1,
+                                                 name='gpt-oss-120b',
+                                                 runtime_beam_width=1,
+                                                 streaming=False,
+                                                 temperature=1.0,
+                                                 top_k=1,
+                                                 top_p=0.001,
+                                                 use_stop_tokens=False),
+                     random_seed=0,
+                     build_flags={'context_fmha': 'enable',
+                                  'enable_attention_dp': None,
+                                  'kv_cache_type': 'paged',
+                                  'max_batch_size': 1024,
+                                  'max_beam_width': 1,
+                                  'max_input_len': 2048,
+                                  'max_num_tokens': 20480,
+                                  'max_seq_len': 32768,
+                                  'moe_expert_parallelism': None,
+                                  'multiple_profiles': 'enable',
+                                  'pipeline_parallelism': 1,
+                                  'remove_input_padding': 'enable',
+                                  'tensor_parallelism': 1,
+                                  'tokens_per_block': 32,
+                                  'torch_compile_enabled': None,
+                                  'use_fp8_context_fmha': 'disable',
+                                  'use_fused_mlp': 'enable',
+                                  'use_paged_context_fmha': 'disable'},
+                     runtime_flags={'adp_balancing_batching_wait_iters': 10,
+                                    'adp_balancing_enable': True,
+                                    'adp_balancing_timeout_iters': 500,
+                                    'batch_scheduler_policy': 'MAX_UTILIZATION',
+                                    'context_chunking_policy': 'FIRST_COME_FIRST_SERVED',
+                                    'cuda_graph_batch_sizes': None,
+                                    'cuda_graph_padding_enabled': False,
+                                    'dynamic_batch_moving_average_window': 128,
+                                    'enable_batch_size_tuning': False,
+                                    'enable_chunked_context': False,
+                                    'enable_max_num_tokens_tuning': False,
+                                    'exclude_input_from_output': True,
+                                    'http_backend': 'custom_http',
+                                    'kvcache_free_gpu_mem_frac': 0.95,
+                                    'max_batch_size': 1024,
+                                    'max_concurrency': 1024,
+                                    'max_num_tokens': 14336,
+                                    'moe_backend': 'CUTLASS',
+                                    'moe_expert_parallelism': None,
+                                    'num_postprocess_workers': 2,
+                                    'pipeline_parallelism': 1,
+                                    'tensor_parallelism': 1,
+                                    'trtllm_backend': 'pytorch',
+                                    'use_cuda_graphs': False,
+                                    'use_inflight_batching': True,
+                                    'workers_per_core': 2},
+                     checkpoint_flags={'kv_cache_dtype': None},
+                     use_cuda_graphs=False,
+                     model_path=PosixPath('/work/build/models/openai/gpt-oss-120b'),
+                     extra_config_yaml='enable_attention_dp: false\n'
+                                       'enable_chunked_prefill: true\n'
+                                       'kv_cache_config:\n'
+                                       '  dtype: fp8\n'
+                                       '  enable_block_reuse: false\n'
+                                       'cuda_graph_config:\n'
+                                       '  enable_padding: true\n'
+                                       '  max_batch_size: 1024\n',
+                     trtllm_endpoint_urls=['0.0.0.0:30000', '0.0.0.0:30001',
+                                           '0.0.0.0:30002', '0.0.0.0:30003',
+                                           '0.0.0.0:30004', '0.0.0.0:30005',
+                                           '0.0.0.0:30006', '0.0.0.0:30007'],
+                     endpoint_url='0.0.0.0:30000',
+                     is_mpi_task=False,
+                     global_size=None)
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:03:46,185 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:03:46,216 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:03:47,974 INFO] [ TrtllmEndpointCore#1 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30001, max_concurrency: 1024)
+[2025-12-23 17:03:47,975 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#1.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:03:58,584 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:03:58,709 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:04:00,508 INFO] [ TrtllmEndpointCore#2 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30002, max_concurrency: 1024)
+[2025-12-23 17:04:00,509 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#2.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:04:11,206 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:04:12,024 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:04:13,994 INFO] [ TrtllmEndpointCore#3 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30003, max_concurrency: 1024)
+[2025-12-23 17:04:13,995 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#3.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:04:25,121 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:04:27,009 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:04:29,808 INFO] [ TrtllmEndpointCore#4 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30004, max_concurrency: 1024)
+[2025-12-23 17:04:29,809 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#4.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:04:41,994 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:04:42,323 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:04:44,907 INFO] [ TrtllmEndpointCore#5 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30005, max_concurrency: 1024)
+[2025-12-23 17:04:44,908 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#5.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:04:55,263 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:04:55,485 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:04:57,290 INFO] [ TrtllmEndpointCore#6 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30006, max_concurrency: 1024)
+[2025-12-23 17:04:57,291 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#6.
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2025-12-23 17:05:08,063 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:05:08,291 loadgen.py:50 WARNING] Current submission version is v5.1 but latest version in submission checker is v6.0
+[2025-12-23 17:05:10,069 INFO] [ TrtllmEndpointCore#7 trtllm_endpoint_core.py:148 TrtllmEndpointCore.__init__ ] Initialized TrtllmEndpointCore with 2 workers (endpoint_url: 0.0.0.0:30007, max_concurrency: 1024)
+[2025-12-23 17:05:10,069 INFO] [ factory.py:131 create_server ] Initialized TrtllmEndpointCore#7.
+[2025-12-23 17:05:10,070 INFO] [ factory.py:137 create_server ] Factory created 8 CoreType.TRTLLM_ENDPOINT cores
+[2025-12-23 17:05:10,070 INFO] [ LLMServer-160383 server.py:112 LLMServer.__init__ ] LLMServer initialized with 8 cores
+[2025-12-23 17:05:10,070 INFO] [ llmlib/__init__.py:144 TrtllmServeClientHarnessOp.wrap_lg_test ] Warming up the server...
+[2025-12-23 17:05:10,071 INFO] [ warmup.py:44 WarmupManager._run_health_checks_with_retry ] Running health checks on all cores...
+[2025-12-23 17:05:10,522 INFO] [ warmup.py:60 WarmupManager.check_core ] Core TrtllmEndpointCore#7 is healthy.
+[2025-12-23 17:05:10,527 INFO] [ warmup.py:60 WarmupManager.check_core ] Core TrtllmEndpointCore#3 is healthy.
+[2025-12-23 17:05:10,528 INFO] [ warmup.py:60 WarmupManager.check_core ] Core TrtllmEndpointCore#5 is healthy.
+[2025-12-23 17:05:10,528 INFO] [ warmup.py:60 WarmupManager.check_core ] Core TrtllmEndpointCore#1 is healthy.
+[2025-12-23 17:05:10,529 INFO] [ warmup.py:60 WarmupManager.check_core ] Core TrtllmEndpointCore#4 is healthy.
+[2025-12-23 17:05:10,529 INFO] [ warmup.py:60 WarmupManager.check_core ] Core TrtllmEndpointCore#0 is healthy.
+[2025-12-23 17:05:10,530 INFO] [ warmup.py:60 WarmupManager.check_core ] Core TrtllmEndpointCore#6 is healthy.
+[2025-12-23 17:05:10,531 INFO] [ warmup.py:60 WarmupManager.check_core ] Core TrtllmEndpointCore#2 is healthy.
+[2025-12-23 17:05:10,531 INFO] [ warmup.py:87 WarmupManager._run_health_checks_with_retry ] All cores are ready.
+[2025-12-23 17:05:10,531 INFO] [ warmup.py:102 WarmupManager.warmup ] Warming up 8 cores in parallel with 10 queries each...
+[2025-12-23 17:05:10,969 INFO] [ warmup.py:133 WarmupManager.warmup ] All cores warmed up successfully.
+[2025-12-23 17:05:10,969 INFO] [ llmlib/__init__.py:146 TrtllmServeClientHarnessOp.wrap_lg_test ] Server warmup completed.
+[2025-12-23 17:05:10,971 INFO] [ llmlib/__init__.py:206 TrtllmServeClientHarnessOp.start_external_metric_capture ] Starting background metric capture for endpoints: ['0.0.0.0:30000', '0.0.0.0:30001', '0.0.0.0:30002', '0.0.0.0:30003', '0.0.0.0:30004', '0.0.0.0:30005', '0.0.0.0:30006', '0.0.0.0:30007'] 
+[2025-12-23 17:05:10,973 WARNING] [ llmlib/__init__.py:153 TrtllmServeClientHarnessOp.wrap_lg_test ] Disabled automatic garbage collection for the test run.
+Processing: |          | 0/0 [00:00<?]Processing: |          | 45/0 [00:00<00:00]Processing: |          | 45/0 [00:00<00:00, 72.59samples/s] Stats=[ 72.59 samples/s, 703.33 tokens/s ]Processing:   1%|          | 81/6600 [00:00<01:04, 72.59samples/s] Stats=[ 72.59 samples/s, 703.33 tokens/s ]Processing:   1%|          | 81/6600 [00:00<01:04, 101.16samples/s] Stats=[ 83.01 samples/s, 800.38 tokens/s ]Processing:   2%|▏         | 160/6600 [00:01<00:29, 101.16samples/s] Stats=[ 83.01 samples/s, 800.38 tokens/s ]Processing:   2%|▏         | 160/6600 [00:01<00:29, 217.44samples/s] Stats=[ 119.48 samples/s, 1156.73 tokens/s ]Processing:   5%|▌         | 362/6600 [00:01<00:10, 217.44samples/s] Stats=[ 119.48 samples/s, 1156.73 tokens/s ]Processing:   5%|▌         | 362/6600 [00:01<00:10, 594.07samples/s] Stats=[ 215.59 samples/s, 2048.66 tokens/s ]Processing:   9%|▊         | 564/6600 [00:02<00:13, 594.07samples/s] Stats=[ 215.59 samples/s, 2048.66 tokens/s ]Processing:   9%|▊         | 564/6600 [00:02<00:13, 457.26samples/s] Stats=[ 265.92 samples/s, 2502.24 tokens/s ]Exception in thread TrtllmEndpointCore#3_poll_responses:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/work/code/llmlib/cores/base.py", line 355, in _poll_responses
+    completed_output_toks[response.request_id] = np.ascontiguousarray(flat_tokens, dtype=np.uint32)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+Processing:  13%|█▎        | 830/6600 [00:02<00:07, 457.26samples/s] Stats=[ 265.92 samples/s, 2502.24 tokens/s ]Processing:  13%|█▎        | 830/6600 [00:02<00:07, 769.57samples/s] Stats=[ 336.50 samples/s, 3173.67 tokens/s ]Processing:  17%|█▋        | 1092/6600 [00:02<00:08, 769.57samples/s] Stats=[ 336.50 samples/s, 3173.67 tokens/s ]Processing:  17%|█▋        | 1092/6600 [00:02<00:08, 621.03samples/s] Stats=[ 378.06 samples/s, 3550.70 tokens/s ]Processing:  20%|█▉        | 1304/6600 [00:03<00:11, 621.03samples/s] Stats=[ 378.06 samples/s, 3550.70 tokens/s ]Processing:  20%|█▉        | 1304/6600 [00:03<00:11, 470.75samples/s] Stats=[ 390.56 samples/s, 3661.50 tokens/s ]Processing:  23%|██▎       | 1487/6600 [00:03<00:09, 470.75samples/s] Stats=[ 390.56 samples/s, 3661.50 tokens/s ]Processing:  23%|██▎       | 1487/6600 [00:03<00:09, 527.10samples/s] Stats=[ 403.42 samples/s, 3784.09 tokens/s ]Processing:  25%|██▌       | 1667/6600 [00:04<00:10, 527.10samples/s] Stats=[ 403.42 samples/s, 3784.09 tokens/s ]Processing:  25%|██▌       | 1667/6600 [00:04<00:10, 479.03samples/s] Stats=[ 410.42 samples/s, 3846.15 tokens/s ]Processing:  28%|██▊       | 1832/6600 [00:04<00:09, 479.03samples/s] Stats=[ 410.42 samples/s, 3846.15 tokens/s ]Processing:  28%|██▊       | 1832/6600 [00:04<00:09, 483.54samples/s] Stats=[ 416.08 samples/s, 3894.88 tokens/s ]Processing:  30%|███       | 1998/6600 [00:04<00:10, 483.54samples/s] Stats=[ 416.08 samples/s, 3894.88 tokens/s ]Processing:  30%|███       | 1998/6600 [00:04<00:10, 435.74samples/s] Stats=[ 417.65 samples/s, 3908.30 tokens/s ]Processing:  33%|███▎      | 2181/6600 [00:05<00:08, 435.74samples/s] Stats=[ 417.65 samples/s, 3908.30 tokens/s ]Processing:  33%|███▎      | 2181/6600 [00:05<00:08, 535.86samples/s] Stats=[ 425.53 samples/s, 3980.94 tokens/s ]Processing:  36%|███▌      | 2364/6600 [00:05<00:08, 535.86samples/s] Stats=[ 425.53 samples/s, 3980.94 tokens/s ]Processing:  36%|███▌      | 2364/6600 [00:05<00:08, 494.93samples/s] Stats=[ 430.19 samples/s, 4031.71 tokens/s ]Processing:  38%|███▊      | 2535/6600 [00:05<00:09, 494.93samples/s] Stats=[ 430.19 samples/s, 4031.71 tokens/s ]Processing:  38%|███▊      | 2535/6600 [00:05<00:09, 416.06samples/s] Stats=[ 429.21 samples/s, 4052.20 tokens/s ]Processing:  41%|████      | 2695/6600 [00:06<00:08, 416.06samples/s] Stats=[ 429.21 samples/s, 4052.20 tokens/s ]Processing:  41%|████      | 2695/6600 [00:06<00:08, 469.97samples/s] Stats=[ 431.43 samples/s, 4085.09 tokens/s ]Processing:  44%|████▎     | 2871/6600 [00:06<00:07, 469.97samples/s] Stats=[ 431.43 samples/s, 4085.09 tokens/s ]Processing:  44%|████▎     | 2871/6600 [00:06<00:07, 511.13samples/s] Stats=[ 435.60 samples/s, 4121.55 tokens/s ]Processing:  46%|████▌     | 3045/6600 [00:06<00:07, 511.13samples/s] Stats=[ 435.60 samples/s, 4121.55 tokens/s ]Processing:  46%|████▌     | 3045/6600 [00:06<00:07, 505.40samples/s] Stats=[ 439.06 samples/s, 4150.40 tokens/s ]Processing:  49%|████▊     | 3217/6600 [00:07<00:07, 505.40samples/s] Stats=[ 439.06 samples/s, 4150.40 tokens/s ]Processing:  49%|████▊     | 3217/6600 [00:07<00:07, 466.63samples/s] Stats=[ 440.45 samples/s, 4167.95 tokens/s ]Processing:  51%|█████     | 3376/6600 [00:07<00:07, 466.63samples/s] Stats=[ 440.45 samples/s, 4167.95 tokens/s ]Processing:  51%|█████     | 3376/6600 [00:07<00:07, 414.10samples/s] Stats=[ 439.14 samples/s, 4154.24 tokens/s ]Processing:  53%|█████▎    | 3530/6600 [00:08<00:06, 414.10samples/s] Stats=[ 439.14 samples/s, 4154.24 tokens/s ]Processing:  53%|█████▎    | 3530/6600 [00:08<00:06, 450.50samples/s] Stats=[ 439.62 samples/s, 4155.72 tokens/s ]Processing:  56%|█████▌    | 3708/6600 [00:08<00:05, 450.50samples/s] Stats=[ 439.62 samples/s, 4155.72 tokens/s ]Processing:  56%|█████▌    | 3708/6600 [00:08<00:05, 504.23samples/s] Stats=[ 442.34 samples/s, 4184.59 tokens/s ]Processing:  59%|█████▉    | 3880/6600 [00:08<00:05, 504.23samples/s] Stats=[ 442.34 samples/s, 4184.59 tokens/s ]Processing:  59%|█████▉    | 3880/6600 [00:08<00:05, 467.40samples/s] Stats=[ 443.39 samples/s, 4193.51 tokens/s ]Processing:  61%|██████    | 4039/6600 [00:09<00:06, 467.40samples/s] Stats=[ 443.39 samples/s, 4193.51 tokens/s ]Processing:  61%|██████    | 4039/6600 [00:09<00:06, 407.92samples/s] Stats=[ 441.88 samples/s, 4182.95 tokens/s ]Processing:  64%|██████▍   | 4219/6600 [00:09<00:04, 407.92samples/s] Stats=[ 441.88 samples/s, 4182.95 tokens/s ]Processing:  64%|██████▍   | 4219/6600 [00:09<00:04, 515.82samples/s] Stats=[ 444.60 samples/s, 4207.32 tokens/s ]Processing:  67%|██████▋   | 4396/6600 [00:09<00:04, 515.82samples/s] Stats=[ 444.60 samples/s, 4207.32 tokens/s ]Processing:  67%|██████▋   | 4396/6600 [00:09<00:04, 511.42samples/s] Stats=[ 446.95 samples/s, 4231.71 tokens/s ]Processing:  69%|██████▉   | 4570/6600 [00:10<00:04, 511.42samples/s] Stats=[ 446.95 samples/s, 4231.71 tokens/s ]Processing:  69%|██████▉   | 4570/6600 [00:10<00:04, 466.71samples/s] Stats=[ 447.67 samples/s, 4236.83 tokens/s ]Processing:  72%|███████▏  | 4748/6600 [00:10<00:03, 466.71samples/s] Stats=[ 447.67 samples/s, 4236.83 tokens/s ]Processing:  72%|███████▏  | 4748/6600 [00:10<00:03, 514.00samples/s] Stats=[ 449.85 samples/s, 4260.12 tokens/s ]Processing:  75%|███████▌  | 4954/6600 [00:10<00:02, 514.00samples/s] Stats=[ 449.85 samples/s, 4260.12 tokens/s ]Processing:  75%|███████▌  | 4954/6600 [00:10<00:02, 597.35samples/s] Stats=[ 454.52 samples/s, 4301.58 tokens/s ]Processing:  79%|███████▊  | 5189/6600 [00:11<00:02, 597.35samples/s] Stats=[ 454.52 samples/s, 4301.58 tokens/s ]Processing:  79%|███████▊  | 5189/6600 [00:11<00:02, 670.28samples/s] Stats=[ 461.24 samples/s, 4365.21 tokens/s ]Processing:  82%|████████▏ | 5417/6600 [00:11<00:03, 670.28samples/s] Stats=[ 461.24 samples/s, 4365.21 tokens/s ]Processing:  82%|████████▏ | 5417/6600 [00:11<00:03, 318.44samples/s] Stats=[ 452.70 samples/s, 4285.53 tokens/s ]Processing:  84%|████████▍ | 5556/6600 [00:12<00:02, 318.44samples/s] Stats=[ 452.70 samples/s, 4285.53 tokens/s ]Processing:  84%|████████▍ | 5556/6600 [00:12<00:02, 406.22samples/s] Stats=[ 451.40 samples/s, 4273.06 tokens/s ]Processing:  86%|████████▋ | 5695/6600 [00:13<00:08, 406.22samples/s] Stats=[ 451.40 samples/s, 4273.06 tokens/s ]Processing:  86%|████████▋ | 5695/6600 [00:13<00:08, 110.98samples/s] Stats=[ 419.96 samples/s, 4058.69 tokens/s ]Processing:  87%|████████▋ | 5753/6600 [00:13<00:05, 110.98samples/s] Stats=[ 419.96 samples/s, 4058.69 tokens/s ]Processing:  87%|████████▋ | 5753/6600 [00:13<00:05, 157.06samples/s] Stats=[ 412.99 samples/s, 4052.68 tokens/s ]Processing:  88%|████████▊ | 5801/6600 [00:29<00:05, 157.06samples/s] Stats=[ 412.99 samples/s, 4052.68 tokens/s ]

@@ -1,0 +1,3 @@
+2025-12-23 17:26:04,068 - root - INFO - [Worker-1/PID-172647] - Worker 1 (PID: 172647) logging initialized
+2025-12-23 17:27:30,115 - asyncio - ERROR - [Worker-1/PID-172647] - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fbbc6bd20c0>

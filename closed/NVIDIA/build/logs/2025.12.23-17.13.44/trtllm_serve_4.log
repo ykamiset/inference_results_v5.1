@@ -1,0 +1,171 @@
+Launch ENV:
+{'NPP_VERSION': '13.0.1.2', 'SHELL': '/bin/bash', 'NVIDIA_VISIBLE_DEVICES': 'void', 'DALI_URL_SUFFIX': '130', 'DALI_BUILD': '', 'CUSOLVER_VERSION': '12.0.4.66', 'NVJITLINK_VERSION': '13.0.88', 'TRT_LLM_VERSION': '1.2.0rc2', 'CUBLAS_VERSION': '13.1.0.3', 'NUMBA_CACHE_DIR': '/work/build/cache', 'NVFATBIN_VERSION': '13.0.85', 'HOSTNAME': 'mlperf-inference-ykamiset-x86-64-10701', 'CUFILE_VERSION': '1.15.1.6', 'MAKE_TERMOUT': '/dev/pts/0', 'CUFFT_VERSION': '12.0.0.61', 'NVIDIA_REQUIRE_CUDA': 'cuda>=9.0', 'SSH_AUTH_SOCK': '/run/host-services/ssh-auth.sock', 'TRITON_CUPTI_PATH': '/usr/local/cuda/include', 'NVVM_VERSION': '13.0.88', 'RUN_ARGS': '--core_type=trtllm_endpoint --benchmarks=gpt-oss-120b --scenarios=Offline', 'DOCA_VERSION': '3.1.0', 'TENSORBOARD_PORT': '6006', '_CUDA_COMPAT_STATUS': 'System has unsupported display driver / cuda driver combination (CUDA_ERROR_SYSTEM_DRIVER_MISMATCH) cuInit()=803', 'TORCH_CUDA_ARCH_LIST': '7.5 8.0 8.6 9.0 10.0 12.0+PTX', 'NCCL_VERSION': '2.27.7', 'MODEL_OPT_VERSION': '0.35.1', 'CUSPARSE_VERSION': '12.6.3.3', 'NVSHMEM_VERSION': '3.4.5', 'ENV': '/etc/shinit_v2', 'PWD': '/work', 'MLPERF_SCRATCH_PATH': '/data/ykamiset/mlperf_scratch/', 'OPENUCX_VERSION': '1.19.0', 'NSIGHT_SYSTEMS_VERSION': '2025.5.1.121', 'NVIDIA_DRIVER_CAPABILITIES': 'compute,utility,video', 'TORCH_NCCL_USE_COMM_NONBLOCKING': '0', 'POLYGRAPHY_VERSION': '0.49.26', 'PIP_BREAK_SYSTEM_PACKAGES': '1', 'MAKEOVERRIDES': '${-*-command-variables-*-}', 'CUDA_ARCH_LIST': '7.5 8.0 8.6 9.0 10.0 12.0', 'UCC_CL_BASIC_TLS': '^sharp', 'TRT_VERSION': '10.13.3.9', 'CUSPARSELT_VERSION': '0.8.1.1', 'TRT_LLM_GIT_COMMIT': '31116825b39f4e6a6a1e127001f5204b73d1dc32', 'NVIDIA_PRODUCT_NAME': 'PyTorch', 'RDMACORE_VERSION': '56.0', 'NVPL_LAPACK_MATH_MODE': 'PEDANTIC', 'HOME': '/root', 'POWER_LOGS_DIR': '/work/build/power_logs/2025.12.23-17.13.44', 'HISTFILE': '/mnt//home/ykamiset/.mlperf_bash_history', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'COCOAPI_VERSION': '2.0+nv0.8.1', 'PIP_CONSTRAINT': '/etc/pip/constraint.txt', 'CUDA_VERSION': '13.0.2.006', 'TRT_LIB_DIR': '/usr/local/tensorrt/lib', 'PYTORCH_VERSION': '2.9.0a0+145a3a7', 'CURAND_VERSION': '10.4.0.35', 'PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION': 'python', 'PYTORCH_BUILD_NUMBER': '0', 'HARNESS_LD_LIBRARY_PATH': '/opt/nvidia/nvda_nixl/lib/x86_64-linux-gnu:/opt/nvidia/nvda_nixl/lib64:/usr/local/ucx//lib:/usr/local/tensorrt/lib:/usr/local/cuda/lib64:/opt/nvidia/nvda_nixl/lib/x86_64-linux-gnu:/opt/nvidia/nvda_nixl/lib64:/usr/local/ucx//lib:/usr/local/tensorrt/lib:/usr/local/cuda/lib64:/usr/local/lib/python3.12/dist-packages/torch/lib:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/lib:/usr/local/cuda/compat/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/tensorrt/lib/libnvinfer.so:/usr/local/tensorrt/lib/:/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu:/work/build/inference/loadgen/build\t', 'CUBLASMP_VERSION': '0.6.0.84', 'PIP_DEFAULT_TIMEOUT': '100', 'PYTORCH_CUDA_ALLOC_CONF': 'garbage_collection_threshold:0.99999', 'NVFUSER_BUILD_VERSION': 'ed11f2b', 'HPCX_VERSION': '2.24.1', 'MFLAGS': '', 'TRITON_CUDACRT_PATH': '/usr/local/cuda/include', 'CUDNN_FRONTEND_VERSION': '1.14.1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'MAKEFLAGS': ' -- RUN_ARGS=--core_type=trtllm_endpoint\\ --benchmarks=gpt-oss-120b\\ --scenarios=Offline', 'TERM': 'xterm', 'GDRCOPY_VERSION': '2.5.1', 'NVFUSER_VERSION': 'ed11f2b', 'NVRX_VERSION': '0.4.1+cuda13', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'OPENMPI_VERSION': '4.1.7', 'NVPTXCOMPILER_VERSION': '13.0.88', 'NVJPEG_VERSION': '13.0.1.86', 'LIBRARY_PATH': '/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu:/work/build/inference/loadgen/build:/usr/local/cuda/lib64/stubs:', 'MAKE_TERMERR': '/dev/pts/0', 'CUDA_PATH': '/usr/local/cuda', 'PYTHONIOENCODING': 'utf-8', 'AWS_OFI_NCCL_VERSION': '1.14.0', 'SHLVL': '1', 'BASH_ENV': '/etc/bash.bashrc', 'MAKELEVEL': '1', 'TRITON_CUOBJDUMP_PATH': '/usr/local/cuda/bin/cuobjdump', 'CUDA_DEVICE_MAX_CONNECTIONS': '32', 'CUDNN_VERSION': '9.14.0.64', 'MAXSMVER': '120', 'EFA_VERSION': '1.38.1', 'NSIGHT_COMPUTE_VERSION': '2025.3.1.4', 'TENSORRT_INCLUDE_DIR': '/usr/local/tensorrt/include', 'DATA_DIR': '/data/ykamiset/mlperf_scratch//data', 'DALI_VERSION': '1.51.2', 'NVIDIA_TRITON_SERVER_VERSION': '24.12', 'UCC_EC_CUDA_EXEC_NUM_THREADS': '256', 'JUPYTER_PORT': '8888', 'TRITON_NVDISASM_PATH': '/usr/local/cuda/bin/nvdisasm', 'PYTORCH_HOME': '/opt/pytorch/pytorch', 'LD_LIBRARY_PATH': '/opt/nvidia/nvda_nixl/lib/x86_64-linux-gnu:/opt/nvidia/nvda_nixl/lib64:/usr/local/ucx//lib:/usr/local/tensorrt/lib:/usr/local/cuda/lib64:D_LIBRARY_PATH:RT_LIB_DIR', 'NVIDIA_BUILD_ID': '222058774', 'OMPI_MCA_coll_hcoll_enable': '0', 'CCACHE_DISABLE': '1', 'OPAL_PREFIX': '/opt/hpcx/ompi', 'NVIDIA_CTK_LIBCUDA_DIR': '/usr/lib/x86_64-linux-gnu', 'CUDA_DRIVER_VERSION': '580.95.05', 'TRANSFORMER_ENGINE_VERSION': '2.8', 'LC_ALL': 'C.UTF-8', 'PREPROCESSED_DATA_DIR': '/data/ykamiset/mlperf_scratch//preprocessed_data', 'PYTORCH_BUILD_VERSION': '2.9.0a0+145a3a7', '_CUDA_COMPAT_PATH': '/usr/local/cuda/compat', 'CUDA_HOME': '/usr/local/cuda', 'TRITON_PTXAS_PATH': '/usr/local/cuda/bin/ptxas', 'CUDA_MODULE_LOADING': 'LAZY', 'NVIDIA_REQUIRE_JETPACK_HOST_MOUNTS': '', 'PATH': '/work/.llm_x86_64/bin:/usr/local/cmake/bin:/usr/local/cuda/bin:/usr/local/cmake/bin:/usr/local/cmake/bin:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/mpi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ucx/bin:/opt/amazon/efa/bin:/opt/tensorrt/bin', 'LOG_DIR': '/work/build/logs/2025.12.23-17.13.44', 'HOST_HOSTNAME': 'GPUA81E', 'CUDLA_VERSION': '13.0.2.006', 'MOFED_VERSION': '5.4-rdmacore56.0', 'MODEL_DIR': '/data/ykamiset/mlperf_scratch//models', 'NVIDIA_PYTORCH_VERSION': '25.10', 'TRTOSS_VERSION': '', 'CPATH': '/usr/local/cuda/include:/usr/include/x86_64-linux-gnu:/usr/include/x86_64-linux-gnu/cub:', 'TORCH_ALLOW_TF32_CUBLAS_OVERRIDE': '1', 'TRITON_CUDART_PATH': '/usr/local/cuda/include', 'OLDPWD': '/work/build/inference/tools/submission', '_': '/usr/bin/python3', 'CUDA_VISIBLE_DEVICES': '4'}
+
+Launch CMD:
+trtllm-serve /work/build/models/openai/gpt-oss-120b --host 0.0.0.0 --port 30004 --extra_llm_api_options /work/build/logs/2025.12.23-17.13.44/trtllm_serve_extra_conf.yaml --num_postprocess_workers 2 --tp_size 1 --pp_size 1 --max_num_tokens 14336 --max_batch_size 1024 --max_seq_len 32768 --max_beam_width 1 --tokenizer /work/build/models/openai/gpt-oss-120b --backend pytorch
+
+Extra Config:
+enable_attention_dp: false
+enable_chunked_prefill: true
+kv_cache_config:
+  dtype: fp8
+  enable_block_reuse: false
+cuda_graph_config:
+  enable_padding: true
+  max_batch_size: 1024
+
+
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc2
+ninja: no work to do.
+/usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:94: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
+  class ResponseFormat(OpenAIBaseModel):
+[12/23/2025-17:14:50] [TRT-LLM] [I] Using LLM with PyTorch backend
+[12/23/2025-17:14:51] [TRT-LLM] [I] Set PluginConfig.nccl_plugin to None.
+[12/23/2025-17:14:51] [TRT-LLM] [I] neither checkpoint_format nor checkpoint_loader were provided, checkpoint_format will be set to HF.
+[12/23/2025-17:14:51] [TRT-LLM] [I] Found quantization_config field in /work/build/models/openai/gpt-oss-120b/config.json, pre-quantized checkpoint is used.
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+You are using a model of type gpt_oss to instantiate a model of type . This is not supported for all configurations of models and can yield errors.
+`torch_dtype` is deprecated! Use `dtype` instead!
+[12/23/2025-17:14:51] [TRT-LLM] [W] Orchestrator is creating IPC executor
+[33;20mrank 0 using MpiPoolSession to spawn MPI processes
+[0m[12/23/2025-17:14:51] [TRT-LLM] [I] Generating a new HMAC key for server proxy_request_queue
+[12/23/2025-17:14:51] [TRT-LLM] [I] Generating a new HMAC key for server worker_init_status_queue
+[12/23/2025-17:14:51] [TRT-LLM] [I] Generating a new HMAC key for server proxy_result_queue
+[12/23/2025-17:14:51] [TRT-LLM] [I] Generating a new HMAC key for server proxy_stats_queue
+[12/23/2025-17:14:51] [TRT-LLM] [I] Generating a new HMAC key for server proxy_kv_cache_events_queue
+[1766531696.661180] [mlperf-inference-ykamiset-x86-64-10701:168473:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.0 (loaded from /usr/local/ucx//lib/libucp.so.0)
+[1766531703.963791] [mlperf-inference-ykamiset-x86-64-10701:168473:0]     ucp_context.c:2339 UCX  WARN  UCP API version is incompatible: required >= 1.20, actual 1.19.0 (loaded from /usr/local/ucx//lib/libucp.so.0)
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Multiple distributions found for package optimum. Picked distribution: optimum
+[TensorRT-LLM] TensorRT LLM version: 1.2.0rc2
+ninja: no work to do.
+/usr/local/lib/python3.12/dist-packages/tensorrt_llm/serve/openai_protocol.py:94: UserWarning: Field name "schema" in "ResponseFormat" shadows an attribute in parent "OpenAIBaseModel"
+  class ResponseFormat(OpenAIBaseModel):
+[TensorRT-LLM][INFO] Refreshed the MPI local session
+[12/23/2025-17:16:12] [TRT-LLM] [I] Generating a new HMAC key for server postprocess_0_feedin_queue
+[12/23/2025-17:16:13] [TRT-LLM] [I] Generating a new HMAC key for server postprocess_1_feedin_queue
+[12/23/2025-17:16:16] [TRT-LLM] [I] ATTENTION RUNTIME FEATURES:  AttentionRuntimeFeatures(chunked_prefill=True, cache_reuse=False, has_speculative_draft_tokens=False, chunk_size=14336, chunked_prefill_buffer_batch_size=4)
+`torch_dtype` is deprecated! Use `dtype` instead!
+[12/23/2025-17:16:16] [TRT-LLM] [I] Validating KV Cache config against kv_cache_dtype="fp8"
+[12/23/2025-17:16:17] [TRT-LLM] [I] CutlassFusedMoE selects alltoall_method_type <AlltoallMethodType.NotEnabled: 0>
+[12/23/2025-17:16:21] [TRT-LLM] [I] Use 63.32 GB for model weights.
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching 60.77GB checkpoint files.
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00000-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00004-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00001-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00011-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00007-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00008-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00005-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00013-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00014-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00006-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00003-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00009-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00010-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00002-of-00014.safetensors to memory...
+[12/23/2025-17:16:21] [TRT-LLM] [I] Prefetching /work/build/models/openai/gpt-oss-120b/model-00012-of-00014.safetensors to memory...
+[12/23/2025-17:16:30] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00000-of-00014.safetensors.
+[12/23/2025-17:16:31] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00004-of-00014.safetensors.
+[12/23/2025-17:16:31] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00001-of-00014.safetensors.
+[12/23/2025-17:16:34] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00003-of-00014.safetensors.
+[12/23/2025-17:16:34] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00009-of-00014.safetensors.
+[12/23/2025-17:16:34] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00011-of-00014.safetensors.
+[12/23/2025-17:16:35] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00005-of-00014.safetensors.
+[12/23/2025-17:16:35] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00014-of-00014.safetensors.
+[12/23/2025-17:16:35] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00012-of-00014.safetensors.
+[12/23/2025-17:16:35] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00008-of-00014.safetensors.
+[12/23/2025-17:16:36] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00002-of-00014.safetensors.
+[12/23/2025-17:16:36] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00007-of-00014.safetensors.
+[12/23/2025-17:16:36] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00010-of-00014.safetensors.
+[12/23/2025-17:16:36] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00013-of-00014.safetensors.
+[12/23/2025-17:16:36] [TRT-LLM] [I] Finished prefetching /work/build/models/openai/gpt-oss-120b/model-00006-of-00014.safetensors.
+Loading safetensors weights in parallel:   0%|          | 0/15 [00:00<?, ?it/s][12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00000-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00004-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00001-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00011-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00007-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00008-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00005-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00013-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00014-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00006-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00003-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00009-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00010-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00002-of-00014.safetensors
+[12/23/2025-17:16:36] [TRT-LLM] [I] Start to load safetensor file /work/build/models/openai/gpt-oss-120b/model-00012-of-00014.safetensors
+Loading safetensors weights in parallel:  80%|████████  | 12/15 [00:00<00:00, 117.44it/s]Loading safetensors weights in parallel: 100%|██████████| 15/15 [00:00<00:00, 136.41it/s]
+Loading weights:   0%|          | 0/801 [00:00<?, ?it/s]Loading weights:   0%|          | 3/801 [00:00<01:07, 11.79it/s]Loading weights:   3%|▎         | 24/801 [00:01<00:40, 19.29it/s]Loading weights:   6%|▌         | 46/801 [00:02<00:38, 19.86it/s]Loading weights:   8%|▊         | 68/801 [00:03<00:44, 16.41it/s]Loading weights:  11%|█         | 90/801 [00:05<00:43, 16.32it/s]Loading weights:  14%|█▍        | 112/801 [00:06<00:41, 16.54it/s]Loading weights:  17%|█▋        | 134/801 [00:07<00:39, 16.95it/s]Loading weights:  19%|█▉        | 156/801 [00:08<00:36, 17.81it/s]Loading weights:  22%|██▏       | 178/801 [00:10<00:33, 18.43it/s]Loading weights:  25%|██▍       | 200/801 [00:11<00:32, 18.65it/s]Loading weights:  28%|██▊       | 222/801 [00:12<00:30, 18.90it/s]Loading weights:  30%|███       | 244/801 [00:13<00:28, 19.34it/s]Loading weights:  33%|███▎      | 266/801 [00:14<00:26, 19.84it/s]Loading weights:  36%|███▌      | 288/801 [00:15<00:25, 20.32it/s]Loading weights:  39%|███▊      | 310/801 [00:16<00:23, 20.80it/s]Loading weights:  41%|████▏     | 332/801 [00:17<00:22, 20.98it/s]Loading weights:  44%|████▍     | 354/801 [00:18<00:21, 21.04it/s]Loading weights:  47%|████▋     | 376/801 [00:19<00:20, 21.05it/s]Loading weights:  50%|████▉     | 398/801 [00:20<00:19, 21.04it/s]Loading weights:  52%|█████▏    | 420/801 [00:21<00:18, 20.78it/s]Loading weights:  55%|█████▌    | 442/801 [00:22<00:17, 20.57it/s]Loading weights:  58%|█████▊    | 464/801 [00:24<00:17, 19.22it/s]Loading weights:  61%|██████    | 486/801 [00:25<00:16, 19.51it/s]Loading weights:  63%|██████▎   | 508/801 [00:26<00:14, 19.76it/s]Loading weights:  66%|██████▌   | 530/801 [00:27<00:13, 20.12it/s]Loading weights:  69%|██████▉   | 552/801 [00:28<00:12, 20.19it/s]Loading weights:  72%|███████▏  | 574/801 [00:29<00:11, 20.30it/s]Loading weights:  74%|███████▍  | 596/801 [00:30<00:09, 20.59it/s]Loading weights:  77%|███████▋  | 618/801 [00:31<00:08, 20.47it/s]Loading weights:  80%|███████▉  | 640/801 [00:32<00:07, 20.70it/s]Loading weights:  83%|████████▎ | 662/801 [00:33<00:06, 20.69it/s]Loading weights:  85%|████████▌ | 684/801 [00:34<00:05, 20.92it/s]Loading weights:  88%|████████▊ | 706/801 [00:35<00:04, 20.97it/s]Loading weights:  91%|█████████ | 728/801 [00:36<00:03, 20.83it/s]Loading weights:  94%|█████████▎| 750/801 [00:37<00:02, 20.87it/s]Loading weights:  96%|█████████▋| 772/801 [00:38<00:01, 21.20it/s]Loading weights:  99%|█████████▉| 794/801 [00:39<00:00, 21.45it/s]Loading weights: 100%|█████████▉| 799/801 [00:40<00:00, 21.99it/s]Loading weights: 100%|██████████| 801/801 [00:40<00:00, 19.97it/s]
+Model init total -- 59.30s
+[12/23/2025-17:17:17] [TRT-LLM] [I] Using Sampler: TorchSampler
+[12/23/2025-17:17:17] [TRT-LLM] [W] Both free_gpu_memory_fraction and max_tokens are set (to 0.9 and 14368 with free memory 28.074417114257812 of total memory 44.587799072265625, respectively). The smaller value will be used.
+[12/23/2025-17:17:17] [TRT-LLM] [W] Attention window size 32769 exceeds upper bound 14368 for available blocks. Reducing to 14368.
+[12/23/2025-17:17:17] [TRT-LLM] [W] Adjusted max_attention_window_vec to [14368]
+[12/23/2025-17:17:17] [TRT-LLM] [W] Adjusted window size 32769 to 14368 in blocks_per_window
+[12/23/2025-17:17:17] [TRT-LLM] [W] Adjusted max_seq_len to 14368
+[TensorRT-LLM][INFO] Max KV cache blocks per sequence: 1025 [window size=14368], tokens per block=32, primary blocks=449, secondary blocks=0, max sequence length=32769
+[TensorRT-LLM][INFO] Number of tokens per block: 32.
+[TensorRT-LLM][INFO] [MemUsageChange] Allocated 0.49 GiB for max tokens in paged KV cache (14368).
+[12/23/2025-17:17:17] [TRT-LLM] [I] max_seq_len=14368, max_num_requests=1024, max_num_tokens=14336, max_batch_size=1024
+[12/23/2025-17:17:17] [TRT-LLM] [I] cache_transceiver is disabled
+[12/23/2025-17:17:17] [TRT-LLM] [I] Running autotuner warmup...
+[12/23/2025-17:17:17] [TRT-LLM] [I] [Autotuner] Autotuning process starts ...
+[TensorRT-LLM][WARNING] Attention workspace size is not enough, increase the size from 0 bytes to 92534272 bytes
+[12/23/2025-17:17:29] [TRT-LLM] [I] [Autotuner] Autotuning process ends
+[12/23/2025-17:17:29] [TRT-LLM] [I] [Autotuner] Cache size after warmup is 28
+[12/23/2025-17:17:29] [TRT-LLM] [I] Creating CUDA graph instances for 22 batch sizes.
+[12/23/2025-17:17:29] [TRT-LLM] [I] global_steady_clock_offset at each rank: [0.0]
+[12/23/2025-17:17:29] [TRT-LLM] [I] Setting global_steady_clock_offset: 0.0 seconds for rank 0
+[12/23/2025-17:17:29] [TRT-LLM] [I] Memory used after loading model weights (inside torch) in memory usage profiling: 64.48 GiB
+[12/23/2025-17:17:29] [TRT-LLM] [I] Memory used after loading model weights (outside torch) in memory usage profiling: 3.26 GiB
+[TensorRT-LLM][WARNING] [kv cache manager] storeContextBlocks: Can not find sequence for request 1024
+[12/23/2025-17:17:29] [TRT-LLM] [I] Memory dynamically allocated during inference (inside torch) in memory usage profiling: 0.49 GiB
+[12/23/2025-17:17:29] [TRT-LLM] [I] Memory used outside torch (e.g., NCCL and CUDA graphs) in memory usage profiling: 3.32 GiB
+[12/23/2025-17:17:29] [TRT-LLM] [I] Peak memory during memory usage profiling (torch + non-torch): 68.29 GiB, available KV cache memory when calculating max tokens: 99.50 GiB, fraction is set 0.9, kv size is 36864. device total memory 178.35 GiB, , tmp kv_mem 0.49 GiB
+[12/23/2025-17:17:29] [TRT-LLM] [I] Estimated max memory in KV cache : 99.50 GiB
+[12/23/2025-17:17:29] [TRT-LLM] [W] Both free_gpu_memory_fraction and max_tokens are set (to 0.9 and 2898188 with free memory 27.754104614257812 of total memory 44.587799072265625, respectively). The smaller value will be used.
+[TensorRT-LLM][INFO] Max KV cache blocks per sequence: 1025 [window size=32769], tokens per block=32, primary blocks=90569, secondary blocks=0, max sequence length=32769
+[TensorRT-LLM][INFO] Number of tokens per block: 32.
+[TensorRT-LLM][INFO] [MemUsageChange] Allocated 99.50 GiB for max tokens in paged KV cache (2898208).
+[12/23/2025-17:17:29] [TRT-LLM] [I] max_seq_len=32769, max_num_requests=1024, max_num_tokens=14336, max_batch_size=1024
+[12/23/2025-17:17:29] [TRT-LLM] [I] cache_transceiver is disabled
+[12/23/2025-17:17:29] [TRT-LLM] [I] Running autotuner warmup...
+[12/23/2025-17:17:29] [TRT-LLM] [I] [Autotuner] Autotuning process starts ...
+[TensorRT-LLM][WARNING] Attention workspace size is not enough, increase the size from 0 bytes to 92534272 bytes
+[12/23/2025-17:17:29] [TRT-LLM] [I] [Autotuner] Autotuning process ends
+[12/23/2025-17:17:29] [TRT-LLM] [I] [Autotuner] Cache size after warmup is 28
+[12/23/2025-17:17:29] [TRT-LLM] [I] Creating CUDA graph instances for 22 batch sizes.
+[12/23/2025-17:17:29] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=1024, draft_len=0
+[12/23/2025-17:17:30] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=512, draft_len=0
+[12/23/2025-17:17:30] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=256, draft_len=0
+[12/23/2025-17:17:30] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=128, draft_len=0
+[12/23/2025-17:17:30] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=120, draft_len=0
+[12/23/2025-17:17:30] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=112, draft_len=0
+[12/23/2025-17:17:30] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=104, draft_len=0
+[12/23/2025-17:17:30] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=96, draft_len=0
+[12/23/2025-17:17:30] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=88, draft_len=0
+[12/23/2025-17:17:31] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=80, draft_len=0
+[12/23/2025-17:17:31] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=72, draft_len=0
+[12/23/2025-17:17:31] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=64, draft_len=0
+[12/23/2025-17:17:31] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=56, draft_len=0
+[12/23/2025-17:17:31] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=48, draft_len=0
+[12/23/2025-17:17:31] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=40, draft_len=0
+[12/23/2025-17:17:31] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=32, draft_len=0
+[12/23/2025-17:17:31] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=24, draft_len=0
+[12/23/2025-17:17:31] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=16, draft_len=0
+[12/23/2025-17:17:32] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=8, draft_len=0
+[12/23/2025-17:17:32] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=4, draft_len=0
+[12/23/2025-17:17:32] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=2, draft_len=0
+[12/23/2025-17:17:32] [TRT-LLM] [I] Run generation-only CUDA graph warmup for batch size=1, draft_len=0
+[12/23/2025-17:17:32] [TRT-LLM] [I] global_steady_clock_offset at each rank: [0.0]
+[12/23/2025-17:17:32] [TRT-LLM] [I] Setting global_steady_clock_offset: 0.0 seconds for rank 0
+[12/23/2025-17:17:32] [TRT-LLM] [I] Setting PyTorch memory fraction to 0.4321530430449819 (77.07501220703125 GiB)
+[12/23/2025-17:17:32] [TRT-LLM] [I] get signal from executor worker
+INFO:     Started server process [167029]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:30004 (Press CTRL+C to quit)

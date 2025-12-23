@@ -16,4 +16,4 @@ from code.common.constants import AliasedName, AliasedNameEnum
 class GPTOSS_120BComponent(AliasedNameEnum):
     """Names of supported Benchmarks for GPTOSS_120B"""
 
-    GPTOSS_120B: AliasedName = AliasedName("gptoss-120b", ("gptoss-120b", "gptoss120b", "gptoss_120b", "gpt-oss-120b"))
+    GPTOSS_120B: AliasedName = AliasedName("gpt-oss-120b", ("gptoss-120b", "gptoss120b", "gptoss_120b", "gpt-oss-120b", "gpt0ss-120b"))
