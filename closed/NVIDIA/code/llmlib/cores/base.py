@@ -98,6 +98,7 @@ class LLMCore(ABC):
         """
         self.name = name
         self.harness_config = harness_config
+        self._tokenizer = None  # Lazy-loaded tokenizer for debugging
         self.complete_callback = complete_callback
         self.progress_display = progress_display
         self.verbose = verbose
@@ -227,6 +228,31 @@ class LLMCore(ABC):
         self.response_thread.daemon = True
         self.response_thread.start()
 
+    def _get_tokenizer(self):
+        """Lazily load tokenizer for decoding tokens to text (for debugging)."""
+        if self._tokenizer is None:
+            try:
+                from transformers import AutoTokenizer
+                # Try to load tokenizer from model_path if available
+                model_path = getattr(self.harness_config, 'model_path', None)
+                if model_path:
+                    self._tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+                    self.logger.debug(f"Loaded tokenizer from {model_path}")
+            except Exception as e:
+                self.logger.debug(f"Could not load tokenizer: {e}")
+                self._tokenizer = None
+        return self._tokenizer
+    
+    def _detokenize(self, tokens):
+        """Decode tokens to text if tokenizer is available."""
+        tokenizer = self._get_tokenizer()
+        if tokenizer is not None:
+            try:
+                return tokenizer.decode(tokens, skip_special_tokens=False)
+            except Exception as e:
+                return f"<decode_error: {e}>"
+        return "<tokenizer_not_available>"
+
     def _poll_responses(self):
         """Per-core response polling thread that processes responses."""
         # Response buffers, key: backend-request_id
@@ -234,6 +260,10 @@ class LLMCore(ABC):
         completed_output_toks: Dict[int, np.ndarray] = {}
         first_token_latencies: Dict[int, float] = {}
         last_token_latencies: Dict[int, float] = {}
+        
+        # Track running average of output token lengths
+        total_output_tokens = 0
+        total_requests_completed = 0
 
         while True:
             with self.pending_samples_lock:
@@ -262,12 +292,25 @@ class LLMCore(ABC):
                 if response.error:
                     self.logger.info(f"Response error for request {response.request_id}: {response.error}")
                     continue
-
+                print("################ response", response)
                 if self.harness_config.gen_config.streaming:
                     is_first_token = response.request_id not in stream_output_toks
                     is_final_token = response.is_final_token
 
                     for beam, chunk_output_toks in enumerate(response.output_tokens):
+                        # Flatten chunk_output_toks if it's nested
+                        if isinstance(chunk_output_toks, (list, tuple)) and len(chunk_output_toks) > 0:
+                            # Check if we have nested structures
+                            if isinstance(chunk_output_toks[0], (list, tuple, np.ndarray)):
+                                # Flatten nested structure
+                                flat_chunk = []
+                                for item in chunk_output_toks:
+                                    if isinstance(item, (list, tuple, np.ndarray)):
+                                        flat_chunk.extend(int(x) for x in item)
+                                    else:
+                                        flat_chunk.append(int(item))
+                                chunk_output_toks = flat_chunk
+                        
                         stream_output_toks[response.request_id].extend(chunk_output_toks)
                         response_num_output_toks = len(stream_output_toks[response.request_id])
 
@@ -282,8 +325,13 @@ class LLMCore(ABC):
 
                         # for 1-len response, we use RESP + <EOS>
                         if response_num_output_toks <= 1:
-                            stream_output_toks[response.request_id].append(self.harness_config.gen_config.eos_token_id)
-                            response_num_output_toks += 1
+                            eos_token_id = self.harness_config.gen_config.eos_token_id
+                            if isinstance(eos_token_id, (list, tuple)):
+                                stream_output_toks[response.request_id].extend(eos_token_id)
+                                response_num_output_toks += len(eos_token_id)
+                            else:
+                                stream_output_toks[response.request_id].append(eos_token_id)
+                                response_num_output_toks += 1
 
                         # update bookeeping for this response
                         with self.pending_samples_lock:
@@ -293,15 +341,47 @@ class LLMCore(ABC):
                             if is_final_token:  # stop keeping track of this sample as pending
                                 del self.pending_samples[response.request_id]
                                 num_pending -= 1
-
+                        # print("############### response_output_toks", response_output_toks)
                         if not self.in_warmup_mode.is_set():
                             # complete this request
-                            completed_output_toks[response.request_id] = np.ascontiguousarray(stream_output_toks[response.request_id], dtype=np.uint32)
+                            # print("############### response_output_toks", response_output_toks)
+                            self.logger.info(
+                                f"DEBUG: response_output_toks type={type(stream_output_toks)}, "
+                                f"example={stream_output_toks[:5]}"
+                            )
+                            try:
+                                completed_output_toks[response.request_id] = np.ascontiguousarray(stream_output_toks[response.request_id], dtype=np.uint32)
+                            except ValueError as e:
+                                self.logger.error(
+                                    f"STREAMING MODE - ValueError converting to numpy array for request {response.request_id}:\n"
+                                    f"  Error: {e}\n"
+                                    f"  Data type: {type(stream_output_toks[response.request_id])}\n"
+                                    f"  Data length: {len(stream_output_toks[response.request_id])}\n"
+                                    f"  First 10 elements: {stream_output_toks[response.request_id][:10]}\n"
+                                    f"  Element types: {[type(x) for x in stream_output_toks[response.request_id][:10]]}\n"
+                                    f"  Full data: {stream_output_toks[response.request_id]}"
+                                )
+                                raise
+                            
                             self.complete_callback(request_id=server_request_id,
                                                    output_toks=completed_output_toks[response.request_id],
                                                    output_toks_len=response_num_output_toks,
                                                    is_first_token=is_first_token,
                                                    is_final_token=is_final_token)
+                            
+                            # Update running average for final tokens
+                            if is_final_token:
+                                total_output_tokens += response_num_output_toks
+                                total_requests_completed += 1
+                                avg_output_len = total_output_tokens / total_requests_completed
+                                # Get last 10 tokens
+                                last_10_tokens = stream_output_toks[response.request_id][-10:] if len(stream_output_toks[response.request_id]) >= 10 else stream_output_toks[response.request_id]
+                                decoded_text = self._detokenize(last_10_tokens)
+                                self.logger.info(
+                                    f"[STREAMING] Request {server_request_id} completed with {response_num_output_toks} tokens. "
+                                    f"Running avg: {avg_output_len:.2f} tokens/request ({total_requests_completed} requests). "
+                                    f"Last 10 tokens: {last_10_tokens} -> '{decoded_text}'"
+                                )
 
                             if is_first_token:
                                 first_token_latencies[response.request_id] = flight_time
@@ -338,21 +418,80 @@ class LLMCore(ABC):
 
                         # for 1-len response, we use RESP + <EOS>
                         if response_num_output_toks <= 1:
-                            response_output_toks.append(self.harness_config.gen_config.eos_token_id)
-                            response_num_output_toks += 1
+                            eos_token_id = self.harness_config.gen_config.eos_token_id
+                            if isinstance(eos_token_id, (list, tuple)):
+                                response_output_toks.extend(eos_token_id)
+                                response_num_output_toks += len(eos_token_id)
+                            else:
+                                response_output_toks.append(eos_token_id)
+                                response_num_output_toks += 1
 
                         # update pending samples book-keeping
                         with self.pending_samples_lock:
                             server_request_id, _ = self.pending_samples.pop(response.request_id)
-
                         if not self.in_warmup_mode.is_set():
                             # complete this request
-                            completed_output_toks[response.request_id] = np.ascontiguousarray(response_output_toks, dtype=np.uint32)
+                            # Flatten token list if it's nested (can happen with beam search or certain backends)
+                            def flatten_tokens(tokens):
+                                """Recursively flatten nested token sequences to a single list."""
+                                result = []
+                                for item in tokens:
+                                    if isinstance(item, (list, tuple, np.ndarray)):
+                                        result.extend(flatten_tokens(item))
+                                    else:
+                                        result.append(int(item))
+                                return result
+                            
+                            flat_tokens = response_output_toks
+                            if isinstance(flat_tokens, (list, tuple, np.ndarray)) and len(flat_tokens) > 0:
+                                # Check if ANY element is nested (not just the first one)
+                                has_nested = False
+                                for elem in flat_tokens:
+                                    if isinstance(elem, (list, tuple, np.ndarray)):
+                                        has_nested = True
+                                        break
+                                
+                                if has_nested:
+                                    self.logger.debug(f"Flattening nested token list for request {response.request_id}")
+                                    flat_tokens = flatten_tokens(flat_tokens)
+                                elif not isinstance(flat_tokens, list):
+                                    # Convert numpy array or tuple to list
+                                    flat_tokens = list(flat_tokens)
+                            
+                            try:
+                                completed_output_toks[response.request_id] = np.ascontiguousarray(flat_tokens, dtype=np.uint32)
+                            except ValueError as e:
+                                self.logger.error(
+                                    f"NON-STREAMING MODE - ValueError converting to numpy array for request {response.request_id}:\n"
+                                    f"  Error: {e}\n"
+                                    f"  Original data type: {type(response_output_toks)}\n"
+                                    f"  Original data length: {len(response_output_toks)}\n"
+                                    f"  Flat tokens type: {type(flat_tokens)}\n"
+                                    f"  Flat tokens length: {len(flat_tokens) if hasattr(flat_tokens, '__len__') else 'N/A'}\n"
+                                    f"  First 10 elements: {flat_tokens[:10] if hasattr(flat_tokens, '__getitem__') else flat_tokens}\n"
+                                    f"  Element types: {[type(x) for x in (flat_tokens[:10] if hasattr(flat_tokens, '__getitem__') else [])]}\n"
+                                    f"  Full flat tokens: {flat_tokens}"
+                                )
+                                raise
                             self.complete_callback(request_id=server_request_id,
                                                    output_toks=completed_output_toks[response.request_id],
                                                    output_toks_len=response_num_output_toks,
                                                    is_first_token=False,
                                                    is_final_token=True)
+                            
+                            # Update running average
+                            total_output_tokens += response_num_output_toks
+                            total_requests_completed += 1
+                            avg_output_len = total_output_tokens / total_requests_completed
+                            # Get last 10 tokens
+                            last_10_tokens = flat_tokens[-10:] if len(flat_tokens) >= 10 else flat_tokens
+                            decoded_text = self._detokenize(last_10_tokens)
+                            self.logger.info(
+                                f"[NON-STREAMING] Request {server_request_id} completed with {response_num_output_toks} tokens. "
+                                f"Running avg: {avg_output_len:.2f} tokens/request ({total_requests_completed} requests). "
+                                f"Last 10 tokens: {last_10_tokens} -> '{decoded_text}'"
+                            )
+                            
                             num_completed += 1
                             num_toks += response_num_output_toks
 
