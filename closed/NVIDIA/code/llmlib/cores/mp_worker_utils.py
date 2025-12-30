@@ -207,18 +207,24 @@ class WorkerProcessManager:
         # Wait for all workers to signal readiness
         ready_workers = 0
         start_time = time.time()
+        timeout_per_worker = 120.0  # Increased to 120 seconds per worker for tokenizer loading
 
         try:
             while ready_workers < worker_count:
-                message = readiness_queue.get(timeout=30.0)
+                elapsed = time.time() - start_time
+                logging.info(f"Waiting for worker {ready_workers + 1}/{worker_count} to be ready... (elapsed: {elapsed:.1f}s)")
+                
+                message = readiness_queue.get(timeout=timeout_per_worker)
                 if message is True:
                     ready_workers += 1
+                    logging.info(f"Worker {ready_workers}/{worker_count} is ready")
                 else:
                     # Worker reported an error
                     raise RuntimeError(f"Worker initialization failed: {message}")
         except (queue.Empty, RuntimeError) as e:
             # On failure, terminate all started processes
-            logging.error(f"Worker startup failed: {e}. Terminating workers.")
+            elapsed = time.time() - start_time
+            logging.error(f"Worker startup failed after {elapsed:.1f}s: {e}. Ready workers: {ready_workers}/{worker_count}. Terminating workers.")
 
             # Clean up the readiness queue before handling the error
             readiness_queue.close()
@@ -232,7 +238,7 @@ class WorkerProcessManager:
 
             # Re-raise the exception
             if isinstance(e, queue.Empty):
-                raise TimeoutError("Worker initialization timed out after 30s") from e
+                raise TimeoutError(f"Worker initialization timed out after {elapsed:.1f}s (timeout={timeout_per_worker}s per worker). {ready_workers}/{worker_count} workers ready.") from e
             raise e
 
         elapsed = time.time() - start_time

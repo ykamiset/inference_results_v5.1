@@ -518,10 +518,14 @@ class AsyncLLMHttpRequestManager:
         response_socket.setsockopt(zmq.LINGER, 0)
 
         try:
+            logging.info(f"Worker (PID: {os.getpid()}) starting initialization...")
             request_provider = AsyncHttpLLMClient(config, max_concurrency, model_name, model_revision)
+            logging.info(f"Worker (PID: {os.getpid()}) created AsyncHttpLLMClient, calling initialize()...")
             await request_provider.initialize()
+            logging.info(f"Worker (PID: {os.getpid()}) initialization complete, signaling readiness")
             readiness_queue.put(True)
         except Exception as e:
+            logging.error(f"Worker (PID: {os.getpid()}) initialization failed: {e}")
             readiness_queue.put(f"Worker initialization failed: {e}")
             zmq_context.term()
             return
@@ -594,6 +598,8 @@ class AsyncHttpLLMClient:
 
     async def initialize(self):
         """Initialize HTTP session, tokenizer, and concurrency control."""
+        logging.info(f"AsyncHttpLLMClient.initialize() starting for {self.endpoint_url}")
+        
         # Create semaphore for concurrency control
         if self.max_concurrency == -1:
             self.concurrency_semaphore = None
@@ -601,6 +607,7 @@ class AsyncHttpLLMClient:
         else:
             self.concurrency_semaphore = asyncio.Semaphore(self.max_concurrency)
             connection_limit = self.max_concurrency
+        logging.info(f"Created semaphore with concurrency limit: {self.max_concurrency}")
 
         # aiohttp uses current event loop by default
         connector = aiohttp.TCPConnector(
@@ -609,6 +616,7 @@ class AsyncHttpLLMClient:
             force_close=False,
             ssl=False,
         )
+        logging.info("Created TCP connector")
 
         self.session = aiohttp.ClientSession(
             connector=connector,
@@ -619,12 +627,15 @@ class AsyncHttpLLMClient:
                 'Authorization': 'Bearer dummy'
             }
         )
+        logging.info("Created aiohttp session")
 
         # Load tokenizer
+        logging.info(f"Loading tokenizer from {self.model_name} (revision: {self.model_revision})...")
         self.tokenizer = AutoTokenizer.from_pretrained(
             self.model_name,
             revision=self.model_revision
         )
+        logging.info(f"Tokenizer loaded successfully from {self.model_name}")
 
     async def process_request(self, request: LLMRequest, response_socket: zmq.asyncio.Socket) -> None:
         """Process request and send response via ZMQ (multiprocess mode)."""
